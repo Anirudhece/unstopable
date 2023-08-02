@@ -4,7 +4,7 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Chip from "@mui/material/Chip";
 import Toolbar from "@mui/material/Toolbar";
@@ -17,7 +17,7 @@ import {
   MdOutlineQuiz,
   MdOutlineAdminPanelSettings,
 } from "react-icons/md";
-// import { MdOutlineQuiz } from "react-icons/ms";
+
 const drawerWidth = 240;
 
 export default function SideDrawer() {
@@ -38,23 +38,29 @@ export default function SideDrawer() {
         <Toolbar>
           <List>
             <ListItem>
-              <ListItemButton>
-                <RiDashboardLine />
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <ListItemIcon>
+                  <RiDashboardLine />
+                </ListItemIcon>
                 <ListItemText primary="Dashboard" />
-              </ListItemButton>
+              </Box>
             </ListItem>
             <ListItem>
-              <ListItemButton>
-                <MdOutlineNoteAlt />
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <ListItemIcon>
+                  <MdOutlineNoteAlt />
+                </ListItemIcon>
                 <ListItemText primary="Assessment" />
-              </ListItemButton>
+              </Box>
             </ListItem>
 
             <ListItem>
-              <ListItemButton>
-                <MdOutlineQuiz />
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <ListItemIcon>
+                  <MdOutlineQuiz />
+                </ListItemIcon>
                 <ListItemText primary="My Library" />
-              </ListItemButton>
+              </Box>
             </ListItem>
 
             <Divider />
@@ -64,10 +70,12 @@ export default function SideDrawer() {
             </ListItem>
 
             <ListItem>
-              <ListItemButton>
-                <MdOutlineAdminPanelSettings />
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <ListItemIcon>
+                  <MdOutlineAdminPanelSettings />
+                </ListItemIcon>
                 <ListItemText primary="Round Status" />
-              </ListItemButton>
+              </Box>
             </ListItem>
           </List>
         </Toolbar>
