@@ -43,7 +43,7 @@ export default function SideDrawer() {
           }}
         >
           <ListItem sx={{ justifyContent: "center" }}>
-            <Link style={{ textDecoration: "none" }} to="/Dashboard">
+            <Link style={{ textDecoration: "none", color: "#0073E6" }} to="/Dashboard">
               <Box
                 sx={{
                   display: "flex",
@@ -66,15 +66,21 @@ export default function SideDrawer() {
           </ListItem>
 
           <ListItem sx={{ justifyContent: "center" }}>
-            <Link style={{ textDecoration: "none" }} to="/Assessment">
+            <Link
+              style={{
+                textDecoration: "none",
+                borderRadius: "8px",
+                border: "1px solid var(--secondary-1, #0073E6)",
+                background: "#E5F1FC",
+                color: "#0073E6",
+              }}
+              to="/Assessment"
+            >
               <Box
                 sx={{
                   display: "flex",
                   flexDirection: "column",
                   padding: "13px",
-                  borderRadius: "8px",
-                  border: "1px solid var(--secondary-1, #0073E6)",
-                  background: "#E5F1FC",
                 }}
               >
                 <ListItemIcon
@@ -92,7 +98,7 @@ export default function SideDrawer() {
           </ListItem>
 
           <ListItem sx={{ justifyContent: "center" }}>
-            <Link style={{ textDecoration: "none" }} to="/MyLibrary">
+            <Link style={{ textDecoration: "none", color: "#0073E6" }} to="/MyLibrary">
               <Box
                 sx={{
                   display: "flex",
@@ -114,14 +120,14 @@ export default function SideDrawer() {
             </Link>
           </ListItem>
 
-          <Divider />
+          <Divider variant="middle" />
 
           <ListItem sx={{ justifyContent: "center" }}>
             <Chip variant="outlined" color="error" label="Admin" />
           </ListItem>
 
           <ListItem sx={{ justifyContent: "center" }}>
-            <Link style={{ textDecoration: "none" }} to="/MyLibrary">
+            <Link style={{ textDecoration: "none", color: "#0073E6" }} to="/MyLibrary">
               <Box
                 sx={{
                   display: "flex",
