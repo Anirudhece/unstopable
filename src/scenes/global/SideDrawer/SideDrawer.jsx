@@ -34,27 +34,77 @@ export default function SideDrawer() {
         variant="permanent"
         anchor="left"
       >
-        <List>
+        <List
+          sx={{
+            color: "var(--secondary-1, #0073E6)",
+            fontFamily: "Inter",
+            fontSize: "20px",
+            fontStyle: "normal",
+            fontWeight: "500",
+          }}
+        >
           <ListItem sx={{ justifyContent: "center" }}>
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <ListItemIcon sx={{ display: "flex", justifyContent: "center" }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                padding: "13px",
+                // border: "2px solid",
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  color: "#1C4980",
+                }}
+              >
                 <RiDashboardLine />
               </ListItemIcon>
               <ListItemText primary="Dashboard" />
             </Box>
           </ListItem>
+
           <ListItem sx={{ justifyContent: "center" }}>
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <ListItemIcon sx={{ display: "flex", justifyContent: "center" }}>
-                <MdOutlineNoteAlt />
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                padding: "13px",
+                borderRadius: "8px",
+                border: "1px solid var(--secondary-1, #0073E6)",
+                background: "#E5F1FC",
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  color: "#0073E6",
+                  
+                }}
+              >
+                <MdOutlineNoteAlt/>
               </ListItemIcon>
               <ListItemText primary="Assessment" />
             </Box>
           </ListItem>
 
           <ListItem sx={{ justifyContent: "center" }}>
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <ListItemIcon sx={{ display: "flex", justifyContent: "center" }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                padding: "13px",
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  color: "#1C4980",
+                }}
+              >
                 <MdOutlineQuiz />
               </ListItemIcon>
               <ListItemText primary="My Library" />
@@ -68,8 +118,20 @@ export default function SideDrawer() {
           </ListItem>
 
           <ListItem sx={{ justifyContent: "center" }}>
-            <Box sx={{ display: "flex", flexDirection: "column" }}>
-              <ListItemIcon sx={{ display: "flex", justifyContent: "center" }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                padding: "13px",
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  color: "#1C4980",
+                }}
+              >
                 <MdOutlineAdminPanelSettings />
               </ListItemIcon>
               <ListItemText primary="Round Status" />
