@@ -39,7 +39,7 @@ export default function SideDrawer() {
           <List>
             <ListItem>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <ListItemIcon>
+                <ListItemIcon sx={{margin:'auto'}}>
                   <RiDashboardLine />
                 </ListItemIcon>
                 <ListItemText primary="Dashboard" />
@@ -47,7 +47,7 @@ export default function SideDrawer() {
             </ListItem>
             <ListItem>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <ListItemIcon>
+                <ListItemIcon sx={{margin:'auto'}}>
                   <MdOutlineNoteAlt />
                 </ListItemIcon>
                 <ListItemText primary="Assessment" />
@@ -56,7 +56,7 @@ export default function SideDrawer() {
 
             <ListItem>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <ListItemIcon>
+                <ListItemIcon sx={{margin:'auto'}}>
                   <MdOutlineQuiz />
                 </ListItemIcon>
                 <ListItemText primary="My Library" />
@@ -65,13 +65,13 @@ export default function SideDrawer() {
 
             <Divider />
 
-            <ListItem>
+            <ListItem sx={{margin:'auto'}}>
               <Chip variant="outlined" color="error" label="Admin" />
             </ListItem>
 
             <ListItem>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <ListItemIcon>
+                <ListItemIcon sx={{margin:'auto'}}>
                   <MdOutlineAdminPanelSettings />
                 </ListItemIcon>
                 <ListItemText primary="Round Status" />
