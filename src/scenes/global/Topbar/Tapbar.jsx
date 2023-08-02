@@ -7,9 +7,10 @@ function Tapbar() {
       <Box
         display="flex"
         justifyContent="space-between"
-        pl={1}
+        
         // pb={3}
         className="topbar-container"
+        mb={1}
       >
         <Box display="flex" className="left" sx={{ alignItems: "center" }}>
           <Box className="component-name">

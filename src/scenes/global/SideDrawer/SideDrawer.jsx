@@ -127,7 +127,7 @@ export default function SideDrawer() {
           </ListItem>
 
           <ListItem sx={{ justifyContent: "center" }}>
-            <Link style={{ textDecoration: "none", color: "#0073E6" }} to="/MyLibrary">
+            <Link style={{ textDecoration: "none", color: "#0073E6" }} to="/RoundStatus">
               <Box
                 sx={{
                   display: "flex",
