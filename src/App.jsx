@@ -7,7 +7,6 @@ import Topbar from "./scenes/global/Topbar/Tapbar.jsx";
 function App() {
   return (
     <>
-      <div>eugrfe3wytgre</div>
       <SideDrawer />
       <Container maxWidth="lg" style={{ marginLeft: "150px" }}>
         <Topbar />
