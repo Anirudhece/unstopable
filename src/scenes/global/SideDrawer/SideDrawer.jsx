@@ -8,6 +8,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Chip from "@mui/material/Chip";
 import { RiDashboardLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 import {
   MdOutlineNoteAlt,
@@ -42,70 +43,75 @@ export default function SideDrawer() {
           }}
         >
           <ListItem sx={{ justifyContent: "center" }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                padding: "13px"
-              }}
-            >
-              <ListItemIcon
+            <Link style={{ textDecoration: "none" }} to="/Dashboard">
+              <Box
                 sx={{
                   display: "flex",
-                  justifyContent: "center",
-                  color: "#1C4980",
+                  flexDirection: "column",
+                  padding: "13px",
                 }}
               >
-                <RiDashboardLine />
-              </ListItemIcon>
-              <ListItemText primary="Dashboard" />
-            </Box>
+                <ListItemIcon
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    color: "#1C4980",
+                  }}
+                >
+                  <RiDashboardLine />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </Box>
+            </Link>
           </ListItem>
 
           <ListItem sx={{ justifyContent: "center" }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                padding: "13px",
-                borderRadius: "8px",
-                border: "1px solid var(--secondary-1, #0073E6)",
-                background: "#E5F1FC",
-              }}
-            >
-              <ListItemIcon
+            <Link style={{ textDecoration: "none" }} to="/Assessment">
+              <Box
                 sx={{
                   display: "flex",
-                  justifyContent: "center",
-                  color: "#0073E6",
-                  
+                  flexDirection: "column",
+                  padding: "13px",
+                  borderRadius: "8px",
+                  border: "1px solid var(--secondary-1, #0073E6)",
+                  background: "#E5F1FC",
                 }}
               >
-                <MdOutlineNoteAlt/>
-              </ListItemIcon>
-              <ListItemText primary="Assessment" />
-            </Box>
+                <ListItemIcon
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    color: "#0073E6",
+                  }}
+                >
+                  <MdOutlineNoteAlt />
+                </ListItemIcon>
+                <ListItemText primary="Assessment" />
+              </Box>
+            </Link>
           </ListItem>
 
           <ListItem sx={{ justifyContent: "center" }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                padding: "13px",
-              }}
-            >
-              <ListItemIcon
+            <Link style={{ textDecoration: "none" }} to="/MyLibrary">
+              <Box
                 sx={{
                   display: "flex",
-                  justifyContent: "center",
-                  color: "#1C4980",
+                  flexDirection: "column",
+                  padding: "13px",
                 }}
               >
-                <MdOutlineQuiz />
-              </ListItemIcon>
-              <ListItemText primary="My Library" />
-            </Box>
+                <ListItemIcon
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    color: "#1C4980",
+                  }}
+                >
+                  <MdOutlineQuiz />
+                </ListItemIcon>
+                <ListItemText primary="My Library" />
+              </Box>
+            </Link>
           </ListItem>
 
           <Divider />
@@ -115,24 +121,29 @@ export default function SideDrawer() {
           </ListItem>
 
           <ListItem sx={{ justifyContent: "center" }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                padding: "13px",
-              }}
-            >
-              <ListItemIcon
+            <Link style={{ textDecoration: "none" }} to="/MyLibrary">
+              <Box
                 sx={{
                   display: "flex",
-                  justifyContent: "center",
-                  color: "#1C4980",
+                  flexDirection: "column",
+                  padding: "13px",
                 }}
               >
-                <MdOutlineAdminPanelSettings />
-              </ListItemIcon>
-              <ListItemText primary="Round Status" sx={{textAlign:'center'}} />
-            </Box>
+                <ListItemIcon
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    color: "#1C4980",
+                  }}
+                >
+                  <MdOutlineAdminPanelSettings />
+                </ListItemIcon>
+                <ListItemText
+                  primary="Round Status"
+                  sx={{ textAlign: "center" }}
+                />
+              </Box>
+            </Link>
           </ListItem>
         </List>
       </Drawer>
