@@ -22,7 +22,7 @@ const drawerWidth = 240;
 
 export default function SideDrawer() {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex",justifyContent:'center' }}>
       <Drawer
         sx={{
           width: drawerWidth,
@@ -35,11 +35,11 @@ export default function SideDrawer() {
         variant="permanent"
         anchor="left"
       >
-        <Toolbar>
-          <List>
+        <Toolbar sx={{ display: "flex",justifyContent:'center' }}>
+          <List >
             <ListItem>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <ListItemIcon sx={{margin:'auto'}}>
+                <ListItemIcon sx={{ display: "flex",justifyContent:'center' }}>
                   <RiDashboardLine />
                 </ListItemIcon>
                 <ListItemText primary="Dashboard" />
@@ -47,7 +47,7 @@ export default function SideDrawer() {
             </ListItem>
             <ListItem>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <ListItemIcon sx={{margin:'auto'}}>
+                <ListItemIcon sx={{ display: "flex",justifyContent:'center' }}>
                   <MdOutlineNoteAlt />
                 </ListItemIcon>
                 <ListItemText primary="Assessment" />
@@ -56,7 +56,7 @@ export default function SideDrawer() {
 
             <ListItem>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <ListItemIcon sx={{margin:'auto'}}>
+                <ListItemIcon sx={{ display: "flex",justifyContent:'center' }}>
                   <MdOutlineQuiz />
                 </ListItemIcon>
                 <ListItemText primary="My Library" />
@@ -65,13 +65,13 @@ export default function SideDrawer() {
 
             <Divider />
 
-            <ListItem sx={{margin:'auto'}}>
+            <ListItem sx={{ display: "flex",justifyContent:'center' }}>
               <Chip variant="outlined" color="error" label="Admin" />
             </ListItem>
 
             <ListItem>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <ListItemIcon sx={{margin:'auto'}}>
+                <ListItemIcon sx={{ display: "flex",justifyContent:'center' }}>
                   <MdOutlineAdminPanelSettings />
                 </ListItemIcon>
                 <ListItemText primary="Round Status" />
