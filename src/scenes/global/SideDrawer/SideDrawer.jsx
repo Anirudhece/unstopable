@@ -7,8 +7,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Chip from "@mui/material/Chip";
-
-// RiDashboardLine
 import { RiDashboardLine } from "react-icons/ri";
 
 import {
@@ -17,7 +15,7 @@ import {
   MdOutlineAdminPanelSettings,
 } from "react-icons/md";
 
-const drawerWidth = 240;
+const drawerWidth = 150;
 
 export default function SideDrawer() {
   return (
@@ -38,7 +36,7 @@ export default function SideDrawer() {
           sx={{
             color: "var(--secondary-1, #0073E6)",
             fontFamily: "Inter",
-            fontSize: "20px",
+            fontSize: "15px",
             fontStyle: "normal",
             fontWeight: "500",
           }}
@@ -48,8 +46,7 @@ export default function SideDrawer() {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                padding: "13px",
-                // border: "2px solid",
+                padding: "13px"
               }}
             >
               <ListItemIcon
@@ -134,7 +131,7 @@ export default function SideDrawer() {
               >
                 <MdOutlineAdminPanelSettings />
               </ListItemIcon>
-              <ListItemText primary="Round Status" />
+              <ListItemText primary="Round Status" sx={{textAlign:'center'}} />
             </Box>
           </ListItem>
         </List>
