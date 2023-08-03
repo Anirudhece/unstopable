@@ -23,3 +23,4 @@ function SquareIcon(props) {
   );
 }
 
+export default SquareIcon;
