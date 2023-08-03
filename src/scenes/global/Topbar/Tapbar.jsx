@@ -13,7 +13,7 @@ function Tapbar() {
         mb={1}
       >
         <Box display="flex" className="left" sx={{ alignItems: "center" }}>
-          <Box className="component-name">
+          <Box p={1} className="component-name">
             <Typography
               sx={{
                 color: "var(--text-100, #1C4980)",
