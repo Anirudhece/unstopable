@@ -8,8 +8,13 @@ import SquareIcon from "../../components/SquareIcon";
 import Heading from "../../components/assessmentOverview/heading";
 import Information from "../../components/assessmentOverview/Information";
 import { data } from "../../store/slices/assessmentOverView";
+import AddIcon from "@mui/icons-material/Add";
 
 function Assessment() {
+
+  const addAssignment=()=>{
+    //write the function here
+  }
   return (
     <>
       <Box p={1} mt={1}>
@@ -196,7 +201,92 @@ function Assessment() {
             My Assessment
           </Typography>
         </Box>
-        <Box></Box>
+        <Box className="Bellow-myAssessment" sx={{width: "fit-content"}}>
+          <Box
+            onClick={()=>addAssignment()}
+            className='NewAssessment-clickable'
+            sx={{
+              display: "flex",
+              padding: "1.875rem",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "0.75rem",
+              flex: " 1 0 0",
+              alignSelf: "stretch",
+
+              borderRadius: "0.75rem",
+              border: "1px dashed var(--system-stroke-2, #DADCE0)",
+              background: "var(--system-background, #F6F8FA)",
+              cursor: "pointer"
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                width: "4.375rem",
+                height: "4.375rem",
+                padding: "0.625rem",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "0.625rem",
+                borderRadius: "4.5rem",
+                background: "#FFF",
+              }}
+            >
+            
+              <AddIcon
+                sx={{
+                  width: "2.5rem",
+                  height: "2.5rem",
+                  flexShrink: "0",
+                  color: "#0073E6",
+                }}
+              />
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "0.625rem",
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "var(--text-100, #1C4980)",
+                  fontFeatureSettings: "'clig' off, 'liga' off",
+                  fontFamily: "Inter",
+                  fontSize: "18px",
+                  fontStyle: "normal",
+                  fontWeight: "500",
+                  lineHeight: "140%",
+                }}
+              >
+                New Assessment
+              </Typography>
+            </Box>
+            <Box>
+              <Typography
+                sx={{
+                  color: "var(--text-100, #1C4980)",
+                  textAlign: "center",
+                  fontFamily: "Inter",
+                  fontSize: "0.75rem",
+                  fontStyle: "normal",
+                  fontWeight: "500",
+                  lineWeight: "normal",
+                  width:'20.5rem'
+                }}
+              >
+                From here you can add questions of multiple types like MCQs,
+                subjective (text or paragraph)!
+              </Typography>
+            </Box>
+          </Box>
+
+          
+        </Box>
       </Box>
     </>
   );
