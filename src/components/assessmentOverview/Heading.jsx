@@ -12,7 +12,7 @@ function Heading(props) {
           fontStyle: "normal",
           fontWeight: "600",
           lineHeight: "140%",
-          marginBottom:'16px'
+          // marginBottom:'16px'
         }}
       >
         {props.value}

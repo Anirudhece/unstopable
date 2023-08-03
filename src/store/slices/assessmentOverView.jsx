@@ -1,6 +1,6 @@
 export const data = {
   totalAssessment: {
-    count: 98,
+    count: 34,
   },
   candidates: {
     totalCandidates: {
@@ -8,7 +8,7 @@ export const data = {
       added: 89,
     },
     whoAttempted: {
-      count: 1140,
+      count: '1,140',
       added: 89,
     },
   },
