@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 function Information({ count, added, text }) {
   return (
     <>
-      <Box>
+      <Box ml={2} mr={2} >
         <Box sx={{display:'flex',alignItems:'center'}}>
           {count && (
             <Typography
