@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import addAssignmentReducer from "./slices/addAssignmentReducer";
 const Store = configureStore({
-    reducers:{
-        addAssignment:addAssignmentReducer,
-    }
-})
+  reducer: {
+    AddAssignment: addAssignmentReducer,
+  },
+});
 export default Store;

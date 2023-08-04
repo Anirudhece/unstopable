@@ -9,12 +9,20 @@ import Heading from "../../components/assessmentOverview/heading";
 import Information from "../../components/assessmentOverview/Information";
 import { data } from "../../store/slices/assessmentOverView";
 import AddIcon from "@mui/icons-material/Add";
+import { useDispatch, useSelector } from "react-redux";
+import { modalReducer } from "../../store/slices/addAssignmentReducer";
+
+import Modal from "../../components/assessmentOverview/Modal";
 
 function Assessment() {
+  const dispatch = useDispatch();
+  const { assignmentCount, isOpen } = useSelector(
+    (state) => state.AddAssignment
+  );
 
-  const addAssignment=()=>{
-    //write the function here
-  }
+  const addAssignment = (e) => {
+    dispatch(modalReducer({ isOpen: true }));
+  };
   return (
     <>
       <Box p={1} mt={1}>
@@ -201,10 +209,10 @@ function Assessment() {
             My Assessment
           </Typography>
         </Box>
-        <Box className="Bellow-myAssessment" sx={{width: "fit-content"}}>
+        <Box className="Bellow-myAssessment" sx={{ width: "fit-content" }}>
           <Box
-            onClick={()=>addAssignment()}
-            className='NewAssessment-clickable'
+            onClick={(e) => addAssignment(e)}
+            className="NewAssessment-clickable"
             sx={{
               display: "flex",
               padding: "1.875rem",
@@ -218,7 +226,7 @@ function Assessment() {
               borderRadius: "0.75rem",
               border: "1px dashed var(--system-stroke-2, #DADCE0)",
               background: "var(--system-background, #F6F8FA)",
-              cursor: "pointer"
+              cursor: "pointer",
             }}
           >
             <Box
@@ -234,7 +242,6 @@ function Assessment() {
                 background: "#FFF",
               }}
             >
-            
               <AddIcon
                 sx={{
                   width: "2.5rem",
@@ -276,7 +283,7 @@ function Assessment() {
                   fontStyle: "normal",
                   fontWeight: "500",
                   lineWeight: "normal",
-                  width:'20.5rem'
+                  width: "20.5rem",
                 }}
               >
                 From here you can add questions of multiple types like MCQs,
@@ -284,8 +291,7 @@ function Assessment() {
               </Typography>
             </Box>
           </Box>
-
-          
+          <Modal />
         </Box>
       </Box>
     </>

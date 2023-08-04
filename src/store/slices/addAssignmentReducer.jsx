@@ -1,14 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-const addAssignment= createSlice({
-    name:'addAssignment',
-    initialState:{
-        assignments:[],
-        assignmentCount:0,
+import {intitalState} from "./constant";
+const addAssignment = createSlice({
+  name: "addAssignment",
+  initialState: {
+    assignments: [],
+    isOpen:false,
+    assignmentCount: 0,
+  },
+  reducers: {
+    modalReducer: (state, action) => {
+      state.isOpen = action.payload.isOpen;
     },
-    reducers:{
-        // add assignemt
-        // delete assignment
-    }
+  },
 });
-export const{}=addAssignment.actions;
+export const {modalReducer} = addAssignment.actions;
 export default addAssignment.reducer;

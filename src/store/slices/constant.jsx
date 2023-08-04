@@ -7,6 +7,6 @@ export const intitalState={
         id:'',
         name:'',
     }],
-    duration:''
-
+    duration:'',
+    isOpen:false,
 }
