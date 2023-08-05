@@ -5,6 +5,8 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import { Box, Typography } from "@mui/material";
+import Heading from '../../components/assessmentOverview/Heading'
 
 import { useDispatch, useSelector } from "react-redux";
 import { modalReducer } from "../../store/slices/addAssignmentReducer";
@@ -15,9 +17,9 @@ export default function Modal() {
   const scroll = "body";
 
   const handleClose = (e) => {
-    e.preventDefault() ;
+    e.preventDefault();
     dispatch(modalReducer({ isOpen: false }));
-    console.log(isOpen)
+    console.log(isOpen);
   };
 
   const descriptionElementRef = useRef(null);
@@ -32,22 +34,39 @@ export default function Modal() {
 
   return (
     <div>
-      {/* <Button onClick={handleClickOpen('body')}>scroll=body</Button> */}
       <Dialog
         open={isOpen}
-        onClose={(e)=>{handleClose(e)}}
+        onClose={(e) => {
+          handleClose(e);
+        }}
         scroll={scroll}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
+        <DialogTitle id="scroll-dialog-title">
+          <Typography
+            sx={{
+              color: "var(--text-100, #1C4980)",
+              textAlign: "center",
+              fontFamily: "Inter",
+              fontSize: "1.25rem",
+              fontStyle: "normal",
+              fontWeight: "600",
+              lineHeight: "normal",
+            }}
+          >
+            Create new assessment
+          </Typography>
+        </DialogTitle>
         <DialogContent dividers={scroll === "body"}>
           <DialogContentText
             id="scroll-dialog-description"
             ref={descriptionElementRef}
             tabIndex={-1}
           >
-            {[...new Array(100)].map(() => `Cras m et.`).join("\n")}
+            <Box>
+              <Heading value='Name of assessment' />
+            </Box>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
