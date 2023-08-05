@@ -1,5 +1,6 @@
 import React from "react";
 import { Chip, Box } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 function Chips(props) {
   const handleDelete = () => {
     console.log("deleting" + props.id);
@@ -13,10 +14,15 @@ function Chips(props) {
           color: "#1C4980",
           gap: "0.125rem",
           background: "#DDEDFF",
+          fontFamily: 'Inter',
+          fontSize: "0.75rem",
+          fontStyle: "normal",
+          fontWeight: "500",
+          lineHeight: "normal",
         }}
         label={props.value}
         onDelete={handleDelete}
-        // deleteIcon={<CloseIcon/>}
+        deleteIcon={<CloseIcon style={{ color: "#1C4980" }} />}
       />
     </>
   );
