@@ -37,6 +37,10 @@ export default function Modal() {
     }
   }, [isOpen]);
 
+  const handleChipSubmit= (e)=>{
+    console.log(e+'bsdfbshdf')
+  }
+
   return (
     <div>
       <Dialog
@@ -92,7 +96,7 @@ export default function Modal() {
                   <Chips key={ind} value={ele} />
                 ))}
               </Box>
-              <InputText value="Type here" />
+              <InputText onSubmit={(e)=>{handleChipSubmit(e)}} value="Type here" />
             </Box>
             <Box mb={2}>
               <Heading value="Duration of assessment" />
@@ -102,7 +106,7 @@ export default function Modal() {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>save</Button>
+          <Button fullWidth='true' variant="contained" onClick={handleClose}>save</Button>
         </DialogActions>
       </Dialog>
     </div>
