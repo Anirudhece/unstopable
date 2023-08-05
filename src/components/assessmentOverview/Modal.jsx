@@ -56,6 +56,7 @@ export default function Modal() {
               fontStyle: "normal",
               fontWeight: "600",
               lineHeight: "normal",
+              display: "flex",
             }}
           >
             Create new assessment
@@ -67,15 +68,32 @@ export default function Modal() {
             ref={descriptionElementRef}
             tabIndex={-1}
           >
-            <Box>
+            {/* <Box> */}
+            <Box mb={2}>
               <Heading value="Name of assessment" />
               <InputText value="Type here" />
             </Box>
 
-            <Box>
+            <Box mb={2}>
               <Heading value="Purpose of the test is" />
               <InputDrop value={optionArray} />
             </Box>
+            <Box mb={2}>
+              <Heading value="Description" />
+              <InputDrop value={optionArray} />
+            </Box>
+            <Box mb={2}>
+              <Heading value="Skills" />
+              <Box>
+                {/* chips aaengi iske andar */}
+              </Box>
+              <InputText value="Type here" />
+            </Box>
+            <Box mb={2}>
+              <Heading value="Duration of assessment" />
+              <InputText value="HH:MM:SS" />
+            </Box>
+            {/* </Box> */}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
