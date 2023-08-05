@@ -19,7 +19,7 @@ export default function Modal() {
   const { isOpen } = useSelector((state) => state.AddAssignment);
   const scroll = "body";
   const optionDropArray = ["option1", "option2", "option3"];
-  const optionChipArray = ["UI/UX", "react", "js", "html", "css", "your mom"];
+  const optionChipArray = ["UI/UX and Design", "react", "js", "html", "css", "your mom"];
 
   const handleClose = (e) => {
     e.preventDefault();

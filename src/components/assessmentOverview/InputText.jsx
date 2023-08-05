@@ -4,9 +4,8 @@ import TextField from "@mui/material/TextField";
 
 export default function FullWidthTextField(props) {
   return (
-    <Box
+    <Box mt={2}
       sx={{
-        width: 500,
         maxWidth: "100%",
       }}
     >

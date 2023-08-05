@@ -12,7 +12,7 @@ export default function InputDrop(props) {
     setAge(event.target.value);
   };
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box mt={2} sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Select</InputLabel>
         <Select
