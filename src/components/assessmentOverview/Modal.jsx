@@ -6,7 +6,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Box, Typography } from "@mui/material";
-import Heading from '../../components/assessmentOverview/Heading'
+import Heading from '../../components/assessmentOverview/Heading';
+import InputText from '../../components/assessmentOverview/InputText'
 
 import { useDispatch, useSelector } from "react-redux";
 import { modalReducer } from "../../store/slices/addAssignmentReducer";
@@ -66,12 +67,12 @@ export default function Modal() {
           >
             <Box>
               <Heading value='Name of assessment' />
+              <InputText value='Type here' />
             </Box>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+          <Button onClick={handleClose}>save</Button>
         </DialogActions>
       </Dialog>
     </div>
