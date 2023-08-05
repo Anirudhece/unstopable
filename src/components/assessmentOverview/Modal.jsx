@@ -9,6 +9,7 @@ import { Box, Typography } from "@mui/material";
 import Heading from "../../components/assessmentOverview/Heading";
 import InputText from "../../components/assessmentOverview/InputText";
 import InputDrop from "../../components/assessmentOverview/InputDrop";
+import Chips from "../../components/assessmentOverview/Chips";
 
 import { useDispatch, useSelector } from "react-redux";
 import { modalReducer } from "../../store/slices/addAssignmentReducer";
@@ -17,7 +18,8 @@ export default function Modal() {
   const dispatch = useDispatch();
   const { isOpen } = useSelector((state) => state.AddAssignment);
   const scroll = "body";
-  const optionArray = ["option1", "option2", "option3"];
+  const optionDropArray = ["option1", "option2", "option3"];
+  const optionChipArray = ["UI/UX", "react", "js", "html", "css", "your mom"];
 
   const handleClose = (e) => {
     e.preventDefault();
@@ -76,16 +78,19 @@ export default function Modal() {
 
             <Box mb={2}>
               <Heading value="Purpose of the test is" />
-              <InputDrop value={optionArray} />
+              <InputDrop value={optionDropArray} />
             </Box>
             <Box mb={2}>
               <Heading value="Description" />
-              <InputDrop value={optionArray} />
+              <InputDrop value={optionDropArray} />
             </Box>
             <Box mb={2}>
               <Heading value="Skills" />
               <Box>
                 {/* chips aaengi iske andar */}
+                {optionChipArray.map((ele, ind) => (
+                  <Chips key={ind} value={ele} />
+                ))}
               </Box>
               <InputText value="Type here" />
             </Box>
