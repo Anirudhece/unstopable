@@ -5,7 +5,7 @@ import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import LanguageIcon from "@mui/icons-material/Language";
 import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 import SquareIcon from "../../components/SquareIcon";
-import Heading from "../../components/assessmentOverview/heading";
+import Heading from "../../components/assessmentOverview/Heading";
 import Information from "../../components/assessmentOverview/Information";
 import { data } from "../../store/slices/assessmentOverView";
 import AddIcon from "@mui/icons-material/Add";

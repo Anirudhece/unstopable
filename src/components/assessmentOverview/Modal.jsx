@@ -19,12 +19,18 @@ export default function Modal() {
   const { isOpen } = useSelector((state) => state.AddAssignment);
   const scroll = "body";
   const optionDropArray = ["option1", "option2", "option3"];
-  const optionChipArray = ["UI/UX and Design", "react", "js", "html", "css", "your mom"];
+  const optionChipArray = [
+    "UI/UX and Design",
+    "react",
+    "js",
+    "html",
+    "css",
+    "your mom",
+  ];
 
   const handleClose = (e) => {
     e.preventDefault();
     dispatch(modalReducer({ isOpen: false }));
-    console.log(isOpen);
   };
 
   const descriptionElementRef = useRef(null);
@@ -37,9 +43,9 @@ export default function Modal() {
     }
   }, [isOpen]);
 
-  const handleChipSubmit= (e)=>{
-    console.log(e+'bsdfbshdf')
-  }
+  const handleInputTextChange = (e) => {
+    console.log(e.target.value + "bsdfbshdf");
+  };
 
   return (
     <div>
@@ -77,7 +83,12 @@ export default function Modal() {
             {/* <Box> */}
             <Box mb={2}>
               <Heading value="Name of assessment" />
-              <InputText value="Type here" />
+              <InputText
+                onChange={(e) => {
+                  handleInputTextChange(e);
+                }}
+                value="Type here"
+              />
             </Box>
 
             <Box mb={2}>
@@ -91,22 +102,33 @@ export default function Modal() {
             <Box mb={2}>
               <Heading value="Skills" />
               <Box>
-                {/* chips aaengi iske andar */}
                 {optionChipArray.map((ele, ind) => (
                   <Chips key={ind} value={ele} />
                 ))}
               </Box>
-              <InputText onSubmit={(e)=>{handleChipSubmit(e)}} value="Type here" />
+              <InputText
+                onChange={(e) => {
+                  handleInputTextChange(e);
+                }}
+                value="Type here"
+              />
             </Box>
             <Box mb={2}>
               <Heading value="Duration of assessment" />
-              <InputText value="HH:MM:SS" />
+              <InputText
+                onChange={(e) => {
+                  handleInputTextChange(e);
+                }}
+                value="HH:MM:SS"
+              />
             </Box>
             {/* </Box> */}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button fullWidth='true' variant="contained" onClick={handleClose}>save</Button>
+          <Button fullWidth="true" variant="contained" onClick={handleClose}>
+            save
+          </Button>
         </DialogActions>
       </Dialog>
     </div>

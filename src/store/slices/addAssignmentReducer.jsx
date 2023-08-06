@@ -1,10 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {intitalState} from "./constant";
+import { intitalState } from "./constant";
 const addAssignment = createSlice({
   name: "addAssignment",
   initialState: {
-    assignments: [],
-    isOpen:false,
+    assignments: [
+      {
+        id: "",
+        assignmentName: "",
+        purpose: "",
+        description: "",
+        skills: [ ],
+        duration: "",
+      },
+    ],
+    isOpen: false,
     assignmentCount: 0,
   },
   reducers: {
@@ -13,5 +22,5 @@ const addAssignment = createSlice({
     },
   },
 });
-export const {modalReducer} = addAssignment.actions;
+export const { modalReducer } = addAssignment.actions;
 export default addAssignment.reducer;
