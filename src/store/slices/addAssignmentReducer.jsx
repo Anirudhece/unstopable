@@ -20,7 +20,13 @@ const addAssignment = createSlice({
     modalReducer: (state, action) => {
       state.isOpen = action.payload.isOpen;
     },
+
+    editFieldReducer: (state, action) => {
+      const { name, value } = action.payload;
+      state.assignments[state.assignmentCount][name] = value;
+    },
+
   },
 });
-export const { modalReducer } = addAssignment.actions;
+export const { modalReducer,editFieldReducer } = addAssignment.actions;
 export default addAssignment.reducer;

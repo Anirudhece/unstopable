@@ -16,6 +16,12 @@ import { modalReducer } from "../../store/slices/addAssignmentReducer";
 
 export default function Modal() {
   const dispatch = useDispatch();
+
+  const { assignments, assignmentCount } = useSelector(
+    (state) => state.AddAssignment
+  );
+  const assignmentGlobalState = assignments[assignmentCount];
+
   const { isOpen } = useSelector((state) => state.AddAssignment);
   const scroll = "body";
   const optionDropArray = ["option1", "option2", "option3"];
@@ -42,10 +48,6 @@ export default function Modal() {
       }
     }
   }, [isOpen]);
-
-  const handleInputTextChange = (e) => {
-    console.log(e.target.value + "bsdfbshdf");
-  };
 
   return (
     <div>
@@ -84,20 +86,27 @@ export default function Modal() {
             <Box mb={2}>
               <Heading value="Name of assessment" />
               <InputText
-                onChange={(e) => {
-                  handleInputTextChange(e);
-                }}
                 value="Type here"
+                id="assignmentName"
+                innerValue={assignmentGlobalState.assignmentName}
               />
             </Box>
 
             <Box mb={2}>
               <Heading value="Purpose of the test is" />
-              <InputDrop value={optionDropArray} />
+              <InputDrop
+                id="purpose"
+                value={optionDropArray}
+                innerValue={assignmentGlobalState.purpose}
+              />
             </Box>
             <Box mb={2}>
               <Heading value="Description" />
-              <InputDrop value={optionDropArray} />
+              <InputDrop
+                id="description"
+                value={optionDropArray}
+                innerValue={assignmentGlobalState.description}
+              />
             </Box>
             <Box mb={2}>
               <Heading value="Skills" />
@@ -107,18 +116,16 @@ export default function Modal() {
                 ))}
               </Box>
               <InputText
-                onChange={(e) => {
-                  handleInputTextChange(e);
-                }}
+                innerValue={assignmentGlobalState.skills}
+                id="skills"
                 value="Type here"
               />
             </Box>
             <Box mb={2}>
               <Heading value="Duration of assessment" />
               <InputText
-                onChange={(e) => {
-                  handleInputTextChange(e);
-                }}
+                innerValue={assignmentGlobalState.duration}
+                id="duration"
                 value="HH:MM:SS"
               />
             </Box>
