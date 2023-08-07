@@ -6,10 +6,11 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Box, Typography } from "@mui/material";
-import Heading from "../../components/assessmentOverview/Heading";
-import InputText from "../../components/assessmentOverview/InputText";
-import InputDrop from "../../components/assessmentOverview/InputDrop";
-import Chips from "../../components/assessmentOverview/Chips";
+import Heading from "./Heading";
+import InputText from "./InputText";
+import InputDrop from "./InputDrop";
+import Chips from "./Chips";
+import TokenInput from "./TokenInput";
 
 import { useDispatch, useSelector } from "react-redux";
 import { modalReducer } from "../../store/slices/addAssignmentReducer";
@@ -110,12 +111,12 @@ export default function Modal() {
             </Box>
             <Box mb={2}>
               <Heading value="Skills" />
-              <Box>
-                {optionChipArray.map((ele, ind) => (
-                  <Chips key={ind} value={ele} />
+              <Box mt={2}>
+                {assignmentGlobalState.skills.map((ele, ind) => (
+                  <Chips key={ind} value={ele} index={ind} />
                 ))}
               </Box>
-              <InputText
+              <TokenInput
                 innerValue={assignmentGlobalState.skills}
                 id="skills"
                 value="Type here"
@@ -129,7 +130,6 @@ export default function Modal() {
                 value="HH:MM:SS"
               />
             </Box>
-            {/* </Box> */}
           </DialogContentText>
         </DialogContent>
         <DialogActions>

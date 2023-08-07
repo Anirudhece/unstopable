@@ -1,5 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { intitalState } from "./constant";
+// import { intitalState } from "./constant";
+
+const removeElementAtIndex = (array, index) => {
+  if (index >= 0 && index < array.length) {
+    const newArray = [...array];
+    newArray.splice(index, 1);
+    return newArray;
+  }
+  return array;
+};
+
 const addAssignment = createSlice({
   name: "addAssignment",
   initialState: {
@@ -9,7 +19,7 @@ const addAssignment = createSlice({
         assignmentName: "",
         purpose: "",
         description: "",
-        skills: [ ],
+        skills: [],
         duration: "",
       },
     ],
@@ -26,7 +36,21 @@ const addAssignment = createSlice({
       state.assignments[state.assignmentCount][name] = value;
     },
 
+    addSkillReducer: (state, action) => {
+      const { value } = action.payload;
+      state.assignments[state.assignmentCount].skills.push(value);
+    },
+
+    removeSkillReducer: (state, action) => {
+      const { index } = action.payload;
+      state.assignments[state.assignmentCount].skills = removeElementAtIndex(
+        state.assignments[state.assignmentCount].skills,
+        index
+      );
+    },
+
   },
 });
-export const { modalReducer,editFieldReducer } = addAssignment.actions;
+export const { modalReducer, editFieldReducer, addSkillReducer,removeSkillReducer } =
+  addAssignment.actions;
 export default addAssignment.reducer;
