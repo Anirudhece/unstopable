@@ -26,14 +26,6 @@ export default function Modal() {
   const { isOpen } = useSelector((state) => state.AddAssignment);
   const scroll = "body";
   const optionDropArray = ["option1", "option2", "option3"];
-  const optionChipArray = [
-    "UI/UX and Design",
-    "react",
-    "js",
-    "html",
-    "css",
-    "your mom",
-  ];
 
   const handleClose = (e) => {
     e.preventDefault();
@@ -51,7 +43,7 @@ export default function Modal() {
   }, [isOpen]);
 
   return (
-    <div>
+    <Box  >
       <Dialog
         open={isOpen}
         onClose={(e) => {
@@ -77,7 +69,7 @@ export default function Modal() {
             Create new assessment
           </Typography>
         </DialogTitle>
-        <DialogContent dividers={scroll === "body"}>
+        <DialogContent Boxiders={scroll === "body"}>
           <DialogContentText
             id="scroll-dialog-description"
             ref={descriptionElementRef}
@@ -138,6 +130,6 @@ export default function Modal() {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </Box>
   );
 }

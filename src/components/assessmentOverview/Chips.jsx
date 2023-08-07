@@ -1,21 +1,21 @@
 import React from "react";
 import { Chip, Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { useDispatch } from "react-redux";
+import { useDispatch } from "@reduxjs/toolkit";
 import { removeSkillReducer } from "../../store/slices/addAssignmentReducer";
 
 function Chips(props) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); // Get the dispatch function from Redux
+
   const handleDelete = () => {
-    const index = props.index;
-    dispatch(removeSkillReducer({ index }));
-    console.log("deleting" + props.id);
+    dispatch(removeSkillReducer({ index: props.index })); // Dispatch the action to remove the skill at the given index
   };
+
   return (
     <>
       <Chip
         sx={{
-          padding: " 0.375rem 0.5rem 0.375rem 0.625rem",
+          padding: "0.375rem 0.5rem 0.375rem 0.625rem",
           margin: "0.625rem",
           color: "#1C4980",
           gap: "0.125rem",

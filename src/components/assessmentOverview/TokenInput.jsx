@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import { useDispatch } from "react-redux";
+import { useDispatch } from "@reduxjs/toolkit";
 import { addSkillReducer } from "../../store/slices/addAssignmentReducer";
 import { Box } from "@mui/material";
 
