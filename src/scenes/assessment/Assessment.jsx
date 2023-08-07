@@ -11,7 +11,6 @@ import { data } from "../../store/slices/assessmentOverView";
 import AddIcon from "@mui/icons-material/Add";
 import { useDispatch, useSelector } from "react-redux";
 import { modalReducer } from "../../store/slices/addAssignmentReducer";
-
 import Modal from "../../components/assessmentOverview/Modal";
 
 function Assessment() {

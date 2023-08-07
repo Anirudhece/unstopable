@@ -1,7 +1,7 @@
 import React from "react";
 import { Chip, Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { useDispatch } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
 import { removeSkillReducer } from "../../store/slices/addAssignmentReducer";
 
 function Chips(props) {

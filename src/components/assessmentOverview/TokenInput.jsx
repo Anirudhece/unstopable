@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import { useDispatch } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
 import { addSkillReducer } from "../../store/slices/addAssignmentReducer";
 import { Box } from "@mui/material";
 
@@ -21,7 +21,7 @@ export default function TokenInput(props) {
   };
 
   return (
-    <Box mt={2}>
+    <Box  mt={2}  sx={{maxWidth: "100%",}}>
       <TextField
         label="Add a skill"
         value={inputValue}
