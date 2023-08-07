@@ -13,7 +13,10 @@ import Chips from "./Chips";
 import TokenInput from "./TokenInput";
 
 import { useDispatch, useSelector } from "react-redux";
-import { modalReducer } from "../../store/slices/addAssignmentReducer";
+import {
+  modalReducer,
+  saveAssessmentInvoice,
+} from "../../store/slices/addAssignmentReducer";
 
 export default function Modal() {
   const dispatch = useDispatch();
@@ -27,11 +30,16 @@ export default function Modal() {
   const scroll = "body";
   const optionDropArray = ["option1", "option2", "option3"];
 
-  const handleClose = (e) => {
-    e.preventDefault();
+  const handleClose = () => {
+    // e.preventDefault();
     dispatch(modalReducer({ isOpen: false }));
   };
 
+  const handleSave = () => {
+    const id = Date.now();
+    dispatch(saveAssessmentInvoice({ id }));
+    handleClose();
+  };
   const descriptionElementRef = useRef(null);
   useEffect(() => {
     if (isOpen) {
@@ -45,18 +53,17 @@ export default function Modal() {
   return (
     <Box>
       <Dialog
-        // sx={{ width: "600px", margin: "auto" }}
         open={isOpen}
-        onClose={(e) => {
-          handleClose(e);
-        }}
+        onClose={handleClose}
         scroll={scroll}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <Box sx={{
-          width:500
-        }}>
+        <Box
+          sx={{
+            width: 500,
+          }}
+        >
           <DialogTitle id="scroll-dialog-title">
             <Typography
               sx={{
@@ -129,7 +136,7 @@ export default function Modal() {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button fullWidth="true" variant="contained" onClick={handleClose}>
+            <Button fullWidth="true" variant="contained" onClick={handleSave}>
               save
             </Button>
           </DialogActions>

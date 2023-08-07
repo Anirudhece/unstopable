@@ -49,8 +49,23 @@ const addAssignment = createSlice({
       );
     },
 
+    saveAssessmentInvoice:(state,action)=>{
+      const {id}=action.payload;
+      state.assignments[state.assignmentCount].id=id;
+      const newEmptyAssessment={
+        id: "",
+        assignmentName: "",
+        purpose: "",
+        description: "",
+        skills: [],
+        duration: "",
+      }
+      state.assignments.push(newEmptyAssessment);
+      state.assignmentCount++;
+    }
+
   },
 });
-export const { modalReducer, editFieldReducer, addSkillReducer,removeSkillReducer } =
+export const { modalReducer, editFieldReducer, addSkillReducer,removeSkillReducer,saveAssessmentInvoice } =
   addAssignment.actions;
 export default addAssignment.reducer;
