@@ -12,6 +12,7 @@ function Heading(props) {
           fontSize: props.size,
           fontWeight: props.weight,
           lineHeight: "140%",
+          textAlign: props.align
         }}
       >
         {props.value}

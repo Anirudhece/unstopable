@@ -1,11 +1,13 @@
 import React from "react";
-import { Box, Divider } from "@mui/material";
+import { Box, Divider, } from "@mui/material";
 import SquareIcon from "../SquareIcon";
 
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import Heading from "./Heading";
 import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
+import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
+import Information from "./Information";
 
 function AssessmentWindow(props) {
   return (
@@ -37,7 +39,7 @@ function AssessmentWindow(props) {
         {/* **********top row end************ */}
 
         {/* *********mid row begins********* */}
-        <Box>
+        <Box mt={1}>
           <Box>
             <Heading size={"1.125rem"} weight={"500"} value="Math Assessment" />
           </Box>
@@ -69,7 +71,46 @@ function AssessmentWindow(props) {
         </Box>
         {/* *******mid row end*********** */}
 
+        <Divider variant="middle" sx={{ mt: 2, mb: 2 }} />
 
+        {/* *********last row start************ */}
+
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Box sx={{ display: "flex" }}>
+            <Information ml="0" align="left" text="Duration" count="00" />
+            <Information text="Duration" count="00" />
+          </Box>
+
+          <Box>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                borderRadius: "3.125rem",
+                border: "1px solid var(--text-100, #1C4980)",
+                p: 0.5,
+                m: 1,
+              }}
+            >
+              <InsertLinkOutlinedIcon
+                sx={{
+                  color: "#1C4980",
+                  width: "1.25rem",
+                  height: "1.25rem",
+                  mr: 0.5,
+                }}
+              />
+              <Heading size={"0.875rem"} weight={"500"} value="Share" />
+            </Box>
+          </Box>
+          <Box>
+            {/* <AvatarGroup max={3}>
+            <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+            <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+            </AvatarGroup> */}
+          </Box>
+        </Box>
+        {/* last row end */}
       </Box>
     </Box>
   );

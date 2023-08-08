@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-function Information({ count, added, text }) {
+function Information({ count, added, text,ml }) {
   return (
     <>
-      <Box ml={1.3} mr={1.3} >
+      <Box ml={ml?ml:1.3} mr={1.3} >
         <Box sx={{display:'flex',alignItems:'center'}}>
           {count && (
             <Typography

@@ -126,6 +126,7 @@ function Assessment() {
                   background={"#FCE8EF"}
                 />
                 <Information
+                  
                   text="E-mail"
                   count={data.candidatesSource.email.count}
                   added={data.candidatesSource.email.added}
@@ -247,6 +248,7 @@ function Assessment() {
               <Heading
                 size={"0.75rem"}
                 weight={"500"}
+                align={'center'}
                 value="From here you can add questions of multiple types like MCQs, 
                subjective (text or paragraph)!"
               />
