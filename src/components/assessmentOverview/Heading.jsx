@@ -8,11 +8,10 @@ function Heading(props) {
           color: "var(--text-100, #1C4980)",
           fontFeatureSettings: "'clig' off, 'liga' off",
           fontFamily: "Inter",
-          fontSize: "14px",
           fontStyle: "normal",
-          fontWeight: "600",
+          fontSize: props.size,
+          fontWeight: props.weight,
           lineHeight: "140%",
-          // marginBottom:'16px'
         }}
       >
         {props.value}

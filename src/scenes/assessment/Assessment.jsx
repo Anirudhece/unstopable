@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Divider } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import ViewAgendaOutlinedIcon from "@mui/icons-material/ViewAgendaOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -27,19 +27,7 @@ function Assessment() {
     <>
       <Box p={1} mt={1}>
         <Box mb={1}>
-          <Typography
-            sx={{
-              color: "var(--text-100, #1C4980)",
-              fontFeatureSettings: "'clig' off, 'liga' off",
-              fontFamily: "Inter",
-              fontSize: "18px",
-              fontStyle: "normal",
-              fontWeight: "500",
-              lineHeight: "140%",
-            }}
-          >
-            Assessments Overview
-          </Typography>
+          <Heading size={"18px"} weight={"500"} value="Assessments Overview" />
         </Box>
 
         <Box
@@ -64,7 +52,7 @@ function Assessment() {
               alignSelf: "stretch",
             }}
           >
-            <Heading value="Total Assessment" />
+            <Heading size={"14px"} weight={"600"} value="Total Assessment" />
             <Box>
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <SquareIcon
@@ -92,7 +80,7 @@ function Assessment() {
               alignSelf: "stretch",
             }}
           >
-            <Heading value="Candidates" />
+            <Heading size={"14px"} weight={"600"} value="Candidates" />
             <Box>
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <SquareIcon
@@ -129,7 +117,7 @@ function Assessment() {
               alignSelf: "stretch",
             }}
           >
-            <Heading value="Candidates Source" />
+            <Heading size={"14px"} weight={"600"} value="Candidates Source" />
             <Box>
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <SquareIcon
@@ -173,7 +161,7 @@ function Assessment() {
               alignSelf: "stretch",
             }}
           >
-            <Heading value="Total Purpose" />
+            <Heading size={"14px"} weight={"600"} value="Total Purpose" />
             <Box>
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <SquareIcon
@@ -192,27 +180,17 @@ function Assessment() {
           {/* **********total purpose end************** */}
         </Box>
       </Box>
-            {/* ************assessments begin*********** */}
+      {/* ************assessments begin*********** */}
       <Box p={1}>
         <Box mt={2} mb={1}>
-          <Typography
-            sx={{
-              color: "var(--text-100, #1C4980)",
-              fontFeatureSettings: "'clig' off, 'liga' off",
-              fontFamily: "Inter",
-              fontSize: "18px",
-              fontStyle: "normal",
-              fontWeight: "500",
-              lineHeight: "140%",
-            }}
-          >
-            My Assessment
-          </Typography>
+          <Heading size={"18px"} weight={"500"} value="Assessments Overview" />
         </Box>
         {/* *********bellow my assessment********** */}
 
-        <Box className="Bellow-myAssessment" sx={{ width: "fit-content",display:'flex', }}>
-
+        <Box
+          className="Bellow-myAssessment"
+          sx={{ width: "fit-content", display: "flex" }}
+        >
           {/* ***********new assessment*************** */}
           <Box
             onClick={(e) => addAssignment(e)}
@@ -263,45 +241,22 @@ function Assessment() {
                 gap: "0.625rem",
               }}
             >
-              <Typography
-                sx={{
-                  color: "var(--text-100, #1C4980)",
-                  fontFeatureSettings: "'clig' off, 'liga' off",
-                  fontFamily: "Inter",
-                  fontSize: "18px",
-                  fontStyle: "normal",
-                  fontWeight: "500",
-                  lineHeight: "140%",
-                }}
-              >
-                New Assessment
-              </Typography>
+              <Heading size={"18px"} weight={"500"} value="New Assessment" />
             </Box>
-            <Box>
-              <Typography
-                sx={{
-                  color: "var(--text-100, #1C4980)",
-                  textAlign: "center",
-                  fontFamily: "Inter",
-                  fontSize: "0.75rem",
-                  fontStyle: "normal",
-                  fontWeight: "500",
-                  lineWeight: "normal",
-                  width: "20.5rem",
-                }}
-              >
-                From here you can add questions of multiple types like MCQs,
-                subjective (text or paragraph)!
-              </Typography>
+            <Box sx={{ width: "20.5rem" }}>
+              <Heading
+                size={"0.75rem"}
+                weight={"500"}
+                value="From here you can add questions of multiple types like MCQs, 
+               subjective (text or paragraph)!"
+              />
             </Box>
           </Box>
           <Modal />
           {/* ***************new assement ends************ */}
 
-          <AssessmentWindow/>
-
+          <AssessmentWindow />
         </Box>
-
       </Box>
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import SquareIcon from "../SquareIcon";
 
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
@@ -7,9 +7,17 @@ import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 
 function AssessmentWindow(props) {
   return (
-    <Container>
-      <Box>
+    <Box
+      sx={{
+        borderRadius: " 0.75rem",
+        border: "1px solid var(--system-stroke-2, #DADCE0)",
+        background: "var(--text-white, #FFF)",
+      }}
+    >
+      <Box m={2} sx={{ width: "22.5rem" }}>
+        {/* ********top row begins********* */}
         <Box
+          className="top-row"
           sx={{
             display: "flex",
             justifyContent: "space-between",
@@ -24,10 +32,17 @@ function AssessmentWindow(props) {
           />
           <MoreVertOutlinedIcon />
         </Box>
+        {/* **********top row end************ */}
 
-        <Box></Box>
+        {/* *********mid row begins********* */}
+        <Box>
+            <Box>
+                
+            </Box>
+        </Box>
+        {/* *******mid row end*********** */}
       </Box>
-    </Container>
+    </Box>
   );
 }
 
