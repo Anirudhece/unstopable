@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Divider, } from "@mui/material";
+import { Box, Divider, AvatarGroup, Avatar } from "@mui/material";
 import SquareIcon from "../SquareIcon";
 
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
@@ -81,7 +81,7 @@ function AssessmentWindow(props) {
             <Information text="Duration" count="00" />
           </Box>
 
-          <Box>
+          <Box sx={{ display: "flex" }}>
             <Box
               sx={{
                 display: "flex",
@@ -102,12 +102,13 @@ function AssessmentWindow(props) {
               />
               <Heading size={"0.875rem"} weight={"500"} value="Share" />
             </Box>
-          </Box>
-          <Box>
-            {/* <AvatarGroup max={3}>
-            <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
-            <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
-            </AvatarGroup> */}
+            <Box>
+              <AvatarGroup max={3}>
+                <Avatar sx={{ bgcolor: "#6548EE" }}>LP</Avatar>
+              {/* we can map the total number*/}
+
+              </AvatarGroup>
+            </Box>
           </Box>
         </Box>
         {/* last row end */}
