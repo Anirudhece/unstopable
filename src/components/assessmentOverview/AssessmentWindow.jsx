@@ -16,9 +16,10 @@ function AssessmentWindow(props) {
         borderRadius: " 0.75rem",
         border: "1px solid var(--system-stroke-2, #DADCE0)",
         background: "var(--text-white, #FFF)",
+        
       }}
     >
-      <Box m={2} sx={{ width: "22.5rem" }}>
+      <Box m={2} >
         {/* ********top row begins********* */}
         <Box
           className="top-row"
@@ -105,8 +106,7 @@ function AssessmentWindow(props) {
             <Box>
               <AvatarGroup max={3}>
                 <Avatar sx={{ bgcolor: "#6548EE" }}>LP</Avatar>
-              {/* we can map the total number*/}
-
+                {/* we can map the total number*/}
               </AvatarGroup>
             </Box>
           </Box>

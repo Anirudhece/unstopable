@@ -126,7 +126,6 @@ function Assessment() {
                   background={"#FCE8EF"}
                 />
                 <Information
-                  
                   text="E-mail"
                   count={data.candidatesSource.email.count}
                   added={data.candidatesSource.email.added}
@@ -190,9 +189,13 @@ function Assessment() {
 
         <Box
           className="Bellow-myAssessment"
-          sx={{ width: "fit-content", display: "flex" }}
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+          }}
         >
-          {/* ***********new assessment*************** */}
+          {/* ***********new assessment *************** */}
           <Box
             onClick={(e) => addAssignment(e)}
             className="NewAssessment-clickable"
@@ -205,7 +208,7 @@ function Assessment() {
               gap: "0.75rem",
               flex: " 1 0 0",
               alignSelf: "stretch",
-
+              width: "30%",
               borderRadius: "0.75rem",
               border: "1px dashed var(--system-stroke-2, #DADCE0)",
               background: "var(--system-background, #F6F8FA)",
@@ -227,7 +230,7 @@ function Assessment() {
             >
               <AddIcon
                 sx={{
-                  width: "2.5rem",
+                  // width: "2.5rem",
                   height: "2.5rem",
                   flexShrink: "0",
                   color: "#0073E6",
@@ -244,11 +247,13 @@ function Assessment() {
             >
               <Heading size={"18px"} weight={"500"} value="New Assessment" />
             </Box>
-            <Box sx={{ width: "20.5rem" }}>
+            <Box 
+            // sx={{ width: "20.5rem" }}
+            >
               <Heading
                 size={"0.75rem"}
                 weight={"500"}
-                align={'center'}
+                align={"center"}
                 value="From here you can add questions of multiple types like MCQs, 
                subjective (text or paragraph)!"
               />
@@ -256,8 +261,21 @@ function Assessment() {
           </Box>
           <Modal />
           {/* ***************new assement ends************ */}
-
-          <AssessmentWindow />
+          <Box sx={{ minWidth: "30%" }}>
+            <AssessmentWindow />
+          </Box>
+          <Box sx={{ minWidth: "30%" }}>
+            <AssessmentWindow />
+          </Box>
+          <Box sx={{ minWidth: "30%" }}>
+            <AssessmentWindow />
+          </Box>
+          <Box sx={{ minWidth: "30%" }}>
+            <AssessmentWindow />
+          </Box>
+          <Box sx={{ minWidth: "30%" }}>
+            <AssessmentWindow />
+          </Box>
         </Box>
       </Box>
     </>
