@@ -1,9 +1,11 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import SquareIcon from "../SquareIcon";
 
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
+import Heading from "./Heading";
+import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
 
 function AssessmentWindow(props) {
   return (
@@ -36,11 +38,38 @@ function AssessmentWindow(props) {
 
         {/* *********mid row begins********* */}
         <Box>
-            <Box>
-                
+          <Box>
+            <Heading size={"1.125rem"} weight={"500"} value="Math Assessment" />
+          </Box>
+          <Box>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <Heading size={"0.875rem"} weight={"500"} value="Job" />
+              <Divider sx={{ ml: 1, mr: 1 }} orientation="vertical" flexItem />
+              <CalendarMonthRoundedIcon
+                sx={{
+                  color: "#1C4980",
+                  width: "0.875rem",
+                  height: "0.875rem",
+                  mr: 1,
+                }}
+              />
+              <Heading
+                color={"#8DA4BF"}
+                size={"0.875rem"}
+                weight={"500"}
+                value="20 Apr 2023"
+              />
             </Box>
+          </Box>
         </Box>
         {/* *******mid row end*********** */}
+
+
       </Box>
     </Box>
   );

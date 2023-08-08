@@ -5,7 +5,7 @@ function Heading(props) {
     <>
       <Typography
         sx={{
-          color: "var(--text-100, #1C4980)",
+          color: props.color?props.color:"var(--text-100, #1C4980)",
           fontFeatureSettings: "'clig' off, 'liga' off",
           fontFamily: "Inter",
           fontStyle: "normal",
