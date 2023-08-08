@@ -31,7 +31,6 @@ export default function Modal() {
   const optionDropArray = ["option1", "option2", "option3"];
 
   const handleClose = () => {
-    // e.preventDefault();
     dispatch(modalReducer({ isOpen: false }));
   };
 

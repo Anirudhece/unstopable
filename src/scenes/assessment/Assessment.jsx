@@ -12,6 +12,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { useDispatch, useSelector } from "react-redux";
 import { modalReducer } from "../../store/slices/addAssignmentReducer";
 import Modal from "../../components/assessmentOverview/Modal";
+import AssessmentWindow from "../../components/assessmentOverview/AssessmentWindow";
 
 function Assessment() {
   const dispatch = useDispatch();
@@ -191,7 +192,7 @@ function Assessment() {
           {/* **********total purpose end************** */}
         </Box>
       </Box>
-
+            {/* ************assessments begin*********** */}
       <Box p={1}>
         <Box mt={2} mb={1}>
           <Typography
@@ -208,7 +209,11 @@ function Assessment() {
             My Assessment
           </Typography>
         </Box>
-        <Box className="Bellow-myAssessment" sx={{ width: "fit-content" }}>
+        {/* *********bellow my assessment********** */}
+
+        <Box className="Bellow-myAssessment" sx={{ width: "fit-content",display:'flex', }}>
+
+          {/* ***********new assessment*************** */}
           <Box
             onClick={(e) => addAssignment(e)}
             className="NewAssessment-clickable"
@@ -291,7 +296,12 @@ function Assessment() {
             </Box>
           </Box>
           <Modal />
+          {/* ***************new assement ends************ */}
+
+          <AssessmentWindow/>
+
         </Box>
+
       </Box>
     </>
   );

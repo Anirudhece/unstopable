@@ -6,8 +6,8 @@ function SquareIcon(props) {
       <Box
         sx={{
             display: 'flex',
-            width: '40px',
-            height: '40px',
+            width: props.width?props.width:40,
+            height: props.height?props.height:40,
             padding: '10px',
             justifyContent: 'center',
             alignItems: 'center',
