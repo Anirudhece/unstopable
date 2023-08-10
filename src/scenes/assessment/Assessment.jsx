@@ -195,9 +195,9 @@ function Assessment() {
           {/* ***********new assessment *************** */}
           <Box
             onClick={(e) => addAssignment(e)}
-            className="NewAssessment-clickable"
+            className="NewAssessment-clickable" m={0.2}
             sx={{
-              mb: 1,
+              // mb: 1,
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -258,7 +258,7 @@ function Assessment() {
           {assignments.map(
             (ele, ind) =>
               ele.id && (
-                <Box mb={0.5} sx={{ minWidth: "33%" }}>
+                <Box m={0.2} sx={{ minWidth: "33%" }}>
                   <AssessmentWindow
                     id={ele.id}
                     assignmentName={ele.assignmentName}
