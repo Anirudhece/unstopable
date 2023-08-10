@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Divider, AvatarGroup, Avatar } from "@mui/material";
 import SquareIcon from "../SquareIcon";
-
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import Heading from "./Heading";
@@ -10,16 +9,15 @@ import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
 import Information from "./Information";
 
 function AssessmentWindow(props) {
-   return (
+  return (
     <Box
       sx={{
         borderRadius: " 0.75rem",
         border: "1px solid var(--system-stroke-2, #DADCE0)",
         background: "var(--text-white, #FFF)",
-        
       }}
     >
-      <Box m={2} >
+      <Box m={2}>
         {/* ********top row begins********* */}
         <Box
           className="top-row"
@@ -42,7 +40,11 @@ function AssessmentWindow(props) {
         {/* *********mid row begins********* */}
         <Box mt={1}>
           <Box>
-            <Heading size={"1.125rem"} weight={"500"} value={props.assignmentName} />
+            <Heading
+              size={"1.125rem"}
+              weight={"500"}
+              value={props.assignmentName}
+            />
           </Box>
           <Box>
             <Box

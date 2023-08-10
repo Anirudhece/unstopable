@@ -8,59 +8,47 @@ import {
   MdOutlineAdminPanelSettings,
 } from "react-icons/md";
 
-const drawerWidth = 120;
+const drawerWidth = 130;
 
 export default function SideDrawer() {
   return (
-    <Box sx={{ display: "flex", justifyContent: "center" }}>
-      <Drawer
-        sx={{
+    <Drawer
+      sx={{
+        width: drawerWidth,
+        flexShrink: 0,
+        "& .MuiDrawer-paper": {
           width: drawerWidth,
-          flexShrink: 0,
-          "& .MuiDrawer-paper": {
-            width: drawerWidth,
-            boxSizing: "border-box",
-          },
+          boxSizing: "border-box",
+        },
+      }}
+      variant="permanent"
+      anchor="left"
+    >
+      <List
+        sx={{
+          color: "var(--secondary-1, #0073E6)",
+          fontFamily: "Inter",
+          fontSize: "15px",
+          fontStyle: "normal",
+          fontWeight: "500",
         }}
-        variant="permanent"
-        anchor="left"
       >
-        <List
-          sx={{
-            color: "var(--secondary-1, #0073E6)",
-            fontFamily: "Inter",
-            fontSize: "15px",
-            fontStyle: "normal",
-            fontWeight: "500",
-          }}
-        >
-          <InsideList
-            to="/Dashboard"
-            value="Dashboard"
-            icon={RiDashboardLine}
-          />
+        <InsideList to="/Dashboard" value="Dashboard" icon={RiDashboardLine} />
+        <InsideList to="/Assessment" value="Assessment" icon={MdOutlineNoteAlt} />
+        <InsideList to="/MyLibrary" value="MyLibrary" icon={MdOutlineQuiz} />
 
-          <InsideList
-            to="/Assessment"
-            value="Assessment"
-            icon={MdOutlineNoteAlt}
-          />
+        <Divider variant="middle" />
 
-          <InsideList to="/MyLibrary" value="MyLibrary" icon={MdOutlineQuiz} />
+        <Box m={1.5} sx={{ display: "flex", justifyContent: "center" }}>
+          <Chip variant="outlined" color="error" label="Admin" />
+        </Box>
 
-          <Divider variant="middle" />
-
-          <Box mt={1} sx={{ display: "flex", justifyContent: "center" }}>
-            <Chip variant="outlined" color="error" label="Admin" />
-          </Box>
-
-          <InsideList
-            to="/RoundStatus"
-            value="RoundStatus"
-            icon={MdOutlineAdminPanelSettings}
-          />
-        </List>
-      </Drawer>
-    </Box>
+        <InsideList
+          to="/RoundStatus"
+          value="RoundStatus"
+          icon={MdOutlineAdminPanelSettings}
+        />
+      </List>
+    </Drawer>
   );
 }

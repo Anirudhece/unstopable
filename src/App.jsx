@@ -13,7 +13,7 @@ function App() {
     <Box >
       {/* sx={{ background: "var(--system-background, #F6F8FA)" }} */}
       <SideDrawer />
-      <Box  style={{ marginLeft: "120px" }}>
+      <Box  style={{ marginLeft: "130px" }}>
         <Topbar />
         <Routes>
           <Route path="/Assessment" element={<Assessment />} />

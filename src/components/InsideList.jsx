@@ -16,9 +16,8 @@ function InsideList(props) {
 
   const isCurrentRoute = location.pathname === props.to;
 
-  const borderColor = isHovered || isCurrentRoute
-    ? "var(--secondary-1, #0073E6)"
-    : "transparent";
+  const borderColor =
+    isHovered || isCurrentRoute ? "var(--secondary-1, #0073E6)" : "transparent";
 
   const background = isCurrentRoute ? "#E5F1FC" : "transparent";
 
@@ -45,7 +44,6 @@ function InsideList(props) {
               display: "flex",
               flexDirection: "column",
               m: "13px",
-              
             }}
           >
             <ListItemIcon
