@@ -13,7 +13,7 @@ function App() {
     <Box >
       {/* sx={{ background: "var(--system-background, #F6F8FA)" }} */}
       <SideDrawer />
-      <Container maxWidth="lg" style={{ marginLeft: "150px" }}>
+      <Box  style={{ marginLeft: "120px" }}>
         <Topbar />
         <Routes>
           <Route path="/Assessment" element={<Assessment />} />
@@ -21,7 +21,7 @@ function App() {
           <Route path="/MyLibrary" element={<MyLibrary />} />
           <Route path="/RoundStatus" element={<RoundStatus />} />
         </Routes>
-      </Container>
+      </Box>
     </Box>
   );
 }

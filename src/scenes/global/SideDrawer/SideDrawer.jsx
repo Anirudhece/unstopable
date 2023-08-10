@@ -16,7 +16,7 @@ import {
   MdOutlineAdminPanelSettings,
 } from "react-icons/md";
 
-const drawerWidth = 150;
+const drawerWidth = 120;
 
 export default function SideDrawer() {
   return (
@@ -115,7 +115,7 @@ export default function SideDrawer() {
                 >
                   <MdOutlineQuiz />
                 </ListItemIcon>
-                <ListItemText primary="My Library" />
+                <ListItemText sx={{textAlign:'center'}} primary="My Library" />
               </Box>
             </Link>
           </ListItem>

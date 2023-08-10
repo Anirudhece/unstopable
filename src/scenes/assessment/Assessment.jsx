@@ -16,9 +16,7 @@ import AssessmentWindow from "../../components/assessmentOverview/AssessmentWind
 
 function Assessment() {
   const dispatch = useDispatch();
-  const { assignmentCount, isOpen } = useSelector(
-    (state) => state.AddAssignment
-  );
+  const { assignments } = useSelector((state) => state.AddAssignment);
 
   const addAssignment = (e) => {
     dispatch(modalReducer({ isOpen: true }));
@@ -192,7 +190,6 @@ function Assessment() {
           sx={{
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: "space-between",
           }}
         >
           {/* ***********new assessment *************** */}
@@ -200,38 +197,37 @@ function Assessment() {
             onClick={(e) => addAssignment(e)}
             className="NewAssessment-clickable"
             sx={{
+              mb: 1,
               display: "flex",
-              padding: "1.875rem",
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
               gap: "0.75rem",
-              flex: " 1 0 0",
               alignSelf: "stretch",
-              width: "30%",
               borderRadius: "0.75rem",
               border: "1px dashed var(--system-stroke-2, #DADCE0)",
               background: "var(--system-background, #F6F8FA)",
               cursor: "pointer",
+              width: "33%",
             }}
           >
             <Box
               sx={{
                 display: "flex",
-                width: "4.375rem",
                 height: "4.375rem",
+                width: "4.375rem",
                 padding: "0.625rem",
                 justifyContent: "center",
                 alignItems: "center",
-                gap: "0.625rem",
                 borderRadius: "4.5rem",
                 background: "#FFF",
               }}
             >
               <AddIcon
                 sx={{
-                  // width: "2.5rem",
+                  display: "flex",
                   height: "2.5rem",
+                  width: "2.5rem",
                   flexShrink: "0",
                   color: "#0073E6",
                 }}
@@ -247,9 +243,7 @@ function Assessment() {
             >
               <Heading size={"18px"} weight={"500"} value="New Assessment" />
             </Box>
-            <Box 
-            // sx={{ width: "20.5rem" }}
-            >
+            <Box>
               <Heading
                 size={"0.75rem"}
                 weight={"500"}
@@ -261,21 +255,17 @@ function Assessment() {
           </Box>
           <Modal />
           {/* ***************new assement ends************ */}
-          <Box sx={{ minWidth: "30%" }}>
-            <AssessmentWindow />
-          </Box>
-          <Box sx={{ minWidth: "30%" }}>
-            <AssessmentWindow />
-          </Box>
-          <Box sx={{ minWidth: "30%" }}>
-            <AssessmentWindow />
-          </Box>
-          <Box sx={{ minWidth: "30%" }}>
-            <AssessmentWindow />
-          </Box>
-          <Box sx={{ minWidth: "30%" }}>
-            <AssessmentWindow />
-          </Box>
+          {assignments.map(
+            (ele, ind) =>
+              ele.id && (
+                <Box mb={0.5} sx={{ minWidth: "33%" }}>
+                  <AssessmentWindow
+                    id={ele.id}
+                    assignmentName={ele.assignmentName}
+                  />
+                </Box>
+              )
+          )}
         </Box>
       </Box>
     </>

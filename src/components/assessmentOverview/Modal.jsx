@@ -28,7 +28,7 @@ export default function Modal() {
 
   const { isOpen } = useSelector((state) => state.AddAssignment);
   const scroll = "body";
-  const optionDropArray = ["option1", "option2", "option3"];
+  const purposeDropArray = ["JOB", "INTERNSHIP", "CONTRACT"];
 
   const handleClose = () => {
     dispatch(modalReducer({ isOpen: false }));
@@ -99,7 +99,7 @@ export default function Modal() {
                 <Heading value="Purpose of the test is" />
                 <InputDrop
                   id="purpose"
-                  value={optionDropArray}
+                  value={purposeDropArray}
                   innerValue={assignmentGlobalState.purpose}
                 />
               </Box>
@@ -107,7 +107,7 @@ export default function Modal() {
                 <Heading value="Description" />
                 <InputDrop
                   id="description"
-                  value={optionDropArray}
+                  value={purposeDropArray}
                   innerValue={assignmentGlobalState.description}
                 />
               </Box>

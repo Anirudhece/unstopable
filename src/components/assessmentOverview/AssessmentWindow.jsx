@@ -10,7 +10,7 @@ import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
 import Information from "./Information";
 
 function AssessmentWindow(props) {
-  return (
+   return (
     <Box
       sx={{
         borderRadius: " 0.75rem",
@@ -42,7 +42,7 @@ function AssessmentWindow(props) {
         {/* *********mid row begins********* */}
         <Box mt={1}>
           <Box>
-            <Heading size={"1.125rem"} weight={"500"} value="Math Assessment" />
+            <Heading size={"1.125rem"} weight={"500"} value={props.assignmentName} />
           </Box>
           <Box>
             <Box
