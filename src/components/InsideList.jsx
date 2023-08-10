@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Box, ListItem, ListItemText, ListItemIcon } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function InsideList(props) {
+  const location = useLocation();
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseOver = () => {
@@ -13,7 +14,13 @@ function InsideList(props) {
     setIsHovered(false);
   };
 
-  const borderColor = isHovered ? "var(--secondary-1, #0073E6)" : "transparent";
+  const isCurrentRoute = location.pathname === props.to;
+
+  const borderColor = isHovered || isCurrentRoute
+    ? "var(--secondary-1, #0073E6)"
+    : "transparent";
+
+  const background = isCurrentRoute ? "#E5F1FC" : "transparent";
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -24,6 +31,7 @@ function InsideList(props) {
           justifyContent: "center",
           border: `1px solid ${borderColor}`,
           borderRadius: "8px",
+          background: background,
         }}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
