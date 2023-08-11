@@ -31,6 +31,7 @@ function AssessmentOverview() {
             gap: "16px",
             flexShrink: "0",
             alignSelf: "stretch",
+            maxWidth: "25%", // Adjust the value as needed
           }}
         >
           <Heading size={"14px"} weight={"600"} value="Total Assessment" />
