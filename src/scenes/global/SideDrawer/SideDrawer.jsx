@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Drawer, List, Divider, Chip } from "@mui/material";
 import { RiDashboardLine } from "react-icons/ri";
 import InsideList from "../../../components/InsideList";
@@ -11,14 +11,37 @@ import {
 const drawerWidth = 130;
 
 export default function SideDrawer() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const isCollapsible = windowWidth <= 900;
+
   return (
     <Drawer
       sx={{
-        width: drawerWidth,
+        width: isCollapsible ? 0 : drawerWidth,
         flexShrink: 0,
         "& .MuiDrawer-paper": {
-          width: drawerWidth,
+          width: isCollapsible ? 0 : drawerWidth,
           boxSizing: "border-box",
+          transition: "width 0.3s ease",
+          overflowX: isCollapsible ? "hidden" : "visible",
+          "@media (max-width: 1100px)": {
+            width: isCollapsible ? 0 : drawerWidth,
+            "& .MuiDrawer-paper": {
+              width: isCollapsible ? 0 : drawerWidth,
+            },
+          },
         },
       }}
       variant="permanent"
