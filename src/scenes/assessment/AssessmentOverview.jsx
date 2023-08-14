@@ -10,31 +10,41 @@ import Information from "../../components/assessmentOverview/Information";
 import { data } from "../../store/slices/assessmentOverView";
 function AssessmentOverview() {
   return (
-    <div>
+    <>
       <Box
         className="component-bellow-assessment-overcview"
         sx={{
           display: "flex",
           border: "1px solid #DADCE0 ",
           borderRadius: "15px",
+          flexWrap: "wrap", // Allow flex items to wrap
         }}
       >
         {/* **********total assessment************** */}
-
+ 
         <Box
           className="Total-assessment"
           sx={{
             display: "flex",
-            padding: "16px 20px",
+            margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            gap: "16px",
-            flexShrink: "0",
-            alignSelf: "stretch",
+            // gap: "16px",
             maxWidth: "25%", // Adjust the value as needed
+            "@media (max-width: 1280px)": {
+              margin: "16px 10px",
+            },
+            "@media (max-width: 1100px)": {
+              display: "inline-flex",
+              margin: "16px 10px",
+              maxWidth: "40%", // Set the width to 50%
+              alignItems: "flex-start", // Reset alignItems
+              // background: "green",
+            },
           }}
         >
           <Heading size={"14px"} weight={"600"} value="Total Assessment" />
+
           <Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <SquareIcon
@@ -54,12 +64,21 @@ function AssessmentOverview() {
           className="candidates"
           sx={{
             display: "flex",
-            padding: "16px 20px",
+            margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            gap: "16px",
-            flexShrink: "0",
-            alignSelf: "stretch",
+            // gap: "16px",
+            "@media (max-width: 1280px)": {
+              // backgroundColor: "green",
+              margin: "16px 10px",
+            },
+            "@media (max-width: 1100px)": {
+              display: "inline-flex", // Fix the typo ('in-line' to 'inline-flex')
+              margin: "16px 10px",
+              width: "100%", // Set the width to 50%
+              alignItems: "flex-start", // Reset alignItems
+              // background: "green",
+            },
           }}
         >
           <Heading size={"14px"} weight={"600"} value="Candidates" />
@@ -91,12 +110,21 @@ function AssessmentOverview() {
           className="candidatesSource"
           sx={{
             display: "flex",
-            padding: "16px 20px",
+            margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            gap: "16px",
-            flexShrink: "0",
-            alignSelf: "stretch",
+            // gap: "16px",
+            "@media (max-width: 1280px)": {
+              // backgroundColor: "green",
+              margin: "16px 10px",
+            },
+            "@media (max-width: 1100px)": {
+              display: "inline-flex", // Fix the typo ('in-line' to 'inline-flex')
+              margin: "16px 10px",
+              width: "50vw", // Set the width to 50%
+              alignItems: "flex-start", // Reset alignItems
+              background: "green",
+            },
           }}
         >
           <Heading size={"14px"} weight={"600"} value="Candidates Source" />
@@ -121,7 +149,7 @@ function AssessmentOverview() {
               <Divider orientation="vertical" flexItem />
               <Information
                 text="Unique Link"
-                count={data.candidatesSource.uniqueLink.count}
+                count={data.candidatesSource.uniqueLink.count} 
                 added={data.candidatesSource.uniqueLink.added}
               />
             </Box>
@@ -135,12 +163,21 @@ function AssessmentOverview() {
           className="Total-purpose"
           sx={{
             display: "flex",
-            padding: "16px 20px",
+            margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            gap: "16px",
-            flexShrink: "0",
-            alignSelf: "stretch",
+            // gap: "16px",
+            "@media (max-width: 1280px)": {
+              margin: "16px 10px",
+            },
+
+            "@media (max-width: 1100px)": {
+              display: "inline-flex", // Fix the typo ('in-line' to 'inline-flex')
+              margin: "16px 10px",
+              width: "50vw", // Set the width to 50%
+              alignItems: "flex-start", // Reset alignItems
+              background: "green",
+            },
           }}
         >
           <Heading size={"14px"} weight={"600"} value="Total Purpose" />
@@ -161,8 +198,7 @@ function AssessmentOverview() {
 
         {/* **********total purpose end************** */}
       </Box>
-    </div>
+    </>
   );
 }
-
 export default AssessmentOverview;

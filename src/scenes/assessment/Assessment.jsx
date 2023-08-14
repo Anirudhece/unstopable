@@ -57,6 +57,9 @@ function Assessment() {
               cursor: "pointer",
               width: "33%",
               padding: "30px",
+              "@media (max-width: 1100px)": {
+                width: "100%",
+              },
             }}
           >
             <Box
@@ -106,7 +109,15 @@ function Assessment() {
           {assignments.map(
             (ele, ind) =>
               ele.id && (
-                <Box m={0.2} sx={{ minWidth: "33%" }}>
+                <Box
+                  m={0.2}
+                  sx={{
+                    minWidth: "33%",
+                    "@media (max-width: 1100px)": {
+                      width: "100%",
+                    },
+                  }}
+                >
                   <AssessmentWindow
                     id={ele.id}
                     assignmentName={ele.assignmentName}

@@ -85,7 +85,6 @@ export default function Modal() {
               ref={descriptionElementRef}
               tabIndex={-1}
             >
-              {/* <Box> */}
               <Box mb={2}>
                 <Heading value="Name of assessment" />
                 <InputText

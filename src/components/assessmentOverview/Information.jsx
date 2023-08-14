@@ -1,10 +1,16 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-function Information({ count, added, text,ml }) {
+function Information({ count, added, text, ml }) {
   return (
     <>
-      <Box ml={ml?ml:1.3} mr={1.3} >
-        <Box sx={{display:'flex',alignItems:'center'}}>
+      <Box
+        sx={{
+          marginLeft: ml ? ml : 1.3,
+          marginRight: 1.3,
+        }}
+        // ml={ml?ml:1.3} mr={1.3}
+      >
+        <Box sx={{ display: "flex", alignItems: "center" }}>
           {count && (
             <Typography
               sx={{
@@ -30,7 +36,7 @@ function Information({ count, added, text,ml }) {
                 fontStyle: "normal",
                 fontWeight: "500",
                 lineHeight: "140%",
-                alignItems:'center',
+                alignItems: "center",
               }}
             >
               {added > 0 ? "+" : "-"}
