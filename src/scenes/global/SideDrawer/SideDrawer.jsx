@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, Drawer, List, Divider, Chip } from "@mui/material";
 import { RiDashboardLine } from "react-icons/ri";
 import InsideList from "../../../components/InsideList";
@@ -7,46 +7,23 @@ import {
   MdOutlineQuiz,
   MdOutlineAdminPanelSettings,
 } from "react-icons/md";
-
+import { useDispatch, useSelector } from "react-redux";
 const drawerWidth = 130;
 
-export default function SideDrawer() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+function SideDrawer(props) {
+  const dispatch = useDispatch();
+  const { isOpen } = useSelector((state) => state.drawer);
 
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+    dispatch(toggleDrawer());
   };
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const isCollapsible = windowWidth <= 900;
-
-  return (
-    <Drawer
-      sx={{
-        width: isCollapsible ? 0 : drawerWidth,
-        flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          width: isCollapsible ? 0 : drawerWidth,
-          boxSizing: "border-box",
-          transition: "width 0.3s ease",
-          overflowX: isCollapsible ? "hidden" : "visible",
-          "@media (max-width: 1100px)": {
-            width: isCollapsible ? 0 : drawerWidth,
-            "& .MuiDrawer-paper": {
-              width: isCollapsible ? 0 : drawerWidth,
-            },
-          },
-        },
-      }}
-      variant="permanent"
-      anchor="left"
-    >
+  const drawer = (
+    <div>
       <List
         sx={{
           color: "var(--secondary-1, #0073E6)",
@@ -57,7 +34,11 @@ export default function SideDrawer() {
         }}
       >
         <InsideList to="/Dashboard" value="Dashboard" icon={RiDashboardLine} />
-        <InsideList to="/Assessment" value="Assessment" icon={MdOutlineNoteAlt} />
+        <InsideList
+          to="/Assessment"
+          value="Assessment"
+          icon={MdOutlineNoteAlt}
+        />
         <InsideList to="/MyLibrary" value="MyLibrary" icon={MdOutlineQuiz} />
 
         <Divider variant="middle" />
@@ -72,6 +53,54 @@ export default function SideDrawer() {
           icon={MdOutlineAdminPanelSettings}
         />
       </List>
-    </Drawer>
+    </div>
+  );
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+  return (
+    <Box sx={{ display: "flex" }}>
+      <Box
+        component="nav"
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
+      >
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={isOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: "none", sm: "block" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+          open
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+    </Box>
   );
 }
+
+export default SideDrawer;

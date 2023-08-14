@@ -3,8 +3,11 @@ import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import { Box, Typography, IconButton, Divider } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import SegmentOutlinedIcon from "@mui/icons-material/SegmentOutlined";
+import { useDispatch } from "react-redux";
+import { toggleDrawer } from "../../../store/slices/drawerSlice";
 
-function Topbar({ isSidebarCollapsed, onSidebarToggle }) {
+function Topbar() {
+  const dispatch = useDispatch();
   const location = useLocation();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -18,6 +21,10 @@ function Topbar({ isSidebarCollapsed, onSidebarToggle }) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const openDrawer = () => {
+    dispatch(toggleDrawer());
+  };
 
   return (
     <>
@@ -51,7 +58,7 @@ function Topbar({ isSidebarCollapsed, onSidebarToggle }) {
             >
               <IconButton>
                 <SegmentOutlinedIcon
-                  clickable={true}
+                  onClick={openDrawer}
                   sx={{
                     width: "30px",
                     height: "30px",
@@ -102,11 +109,9 @@ function Topbar({ isSidebarCollapsed, onSidebarToggle }) {
           className="right"
           sx={{ display: "flex", alignItems: "center", color: "#1C4980" }}
         >
-          {isSidebarCollapsed && (
-            <IconButton onClick={onSidebarToggle}>
-              <PhoneAndroidIcon />
-            </IconButton>
-          )}
+          <IconButton>
+            <PhoneAndroidIcon />
+          </IconButton>
         </Box>
       </Box>
     </>
