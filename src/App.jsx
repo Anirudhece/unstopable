@@ -1,7 +1,7 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import SideDrawer from "./scenes/global/SideDrawer/SideDrawer";
-import { Box } from "@mui/material";
+import { Box, CssBaseline } from "@mui/material";
 import Topbar from "./scenes/global/Topbar/Tapbar.jsx";
 import Assessment from "./scenes/assessment/Assessment";
 import Dashboard from "./scenes/dashboard/Dashboard.jsx";
@@ -22,18 +22,19 @@ function App() {
     };
   }, []);
 
-  const isCollapsible = windowWidth <= 900;
+  const isCollapsible = windowWidth <= 600;
 
   return (
     <Box>
+      <CssBaseline />
       <SideDrawer />
       <Box
         style={{
           marginLeft: isCollapsible ? 0 : "130px",
         }}
-        className={isCollapsible ? "collapsed-sidebar-margin" : ""}
+        // className={isCollapsible ? "collapsed-sidebar-margin" : ""}
       >
-        <Topbar />
+        <Topbar isCollapsible={isCollapsible} />
         <Routes>
           <Route path="/Assessment" element={<Assessment />} />
           <Route path="/Dashboard" element={<Dashboard />} />

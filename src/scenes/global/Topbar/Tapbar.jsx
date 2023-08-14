@@ -42,7 +42,7 @@ function Topbar() {
         }}
       >
         <Box display="flex" className="left" sx={{ alignItems: "center" }}>
-          {windowWidth <= 900 && (
+          {windowWidth <= 600 && (
             <Box
               sx={{
                 display: "flex",

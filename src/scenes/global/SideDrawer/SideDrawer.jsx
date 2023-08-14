@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Drawer, List, Divider, Chip } from "@mui/material";
 import { RiDashboardLine } from "react-icons/ri";
 import InsideList from "../../../components/InsideList";
@@ -9,21 +9,20 @@ import {
 } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 const drawerWidth = 130;
+import { toggleDrawer } from "../../../store/slices/drawerSlice";
 
 function SideDrawer(props) {
   const dispatch = useDispatch();
   const { isOpen } = useSelector((state) => state.drawer);
 
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
     dispatch(toggleDrawer());
   };
 
   const drawer = (
-    <div>
+    <Box>
       <List
         sx={{
           color: "var(--secondary-1, #0073E6)",
@@ -53,7 +52,7 @@ function SideDrawer(props) {
           icon={MdOutlineAdminPanelSettings}
         />
       </List>
-    </div>
+    </Box>
   );
 
   const container =
