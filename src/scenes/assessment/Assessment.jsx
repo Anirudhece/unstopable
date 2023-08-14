@@ -56,6 +56,7 @@ function Assessment() {
               background: "var(--system-background, #F6F8FA)",
               cursor: "pointer",
               width: "33%",
+              padding: "30px",
             }}
           >
             <Box
