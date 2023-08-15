@@ -21,7 +21,7 @@ function AssessmentOverview() {
         }}
       >
         {/* **********total assessment************** */}
- 
+
         <Box
           className="Total-assessment"
           sx={{
@@ -29,21 +29,19 @@ function AssessmentOverview() {
             margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            // gap: "16px",
-            maxWidth: "25%", // Adjust the value as needed
-            "@media (max-width: 1280px)": {
-              margin: "16px 10px",
-            },
-            "@media (max-width: 1100px)": {
-              display: "inline-flex",
-              margin: "16px 10px",
-              maxWidth: "40%", // Set the width to 50%
-              alignItems: "flex-start", // Reset alignItems
-              // background: "green",
+            maxWidth: "25%",
+            "@media (max-width: 1000px)": {
+              minWidth: "40%",
+              mr: 0,
             },
           }}
         >
-          <Heading size={"14px"} weight={"600"} value="Total Assessment" />
+          <Heading
+            mb="16px"
+            size={"14px"}
+            weight={"600"}
+            value="Total Assessment"
+          />
 
           <Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -67,21 +65,12 @@ function AssessmentOverview() {
             margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            // gap: "16px",
-            "@media (max-width: 1280px)": {
-              // backgroundColor: "green",
-              margin: "16px 10px",
-            },
-            "@media (max-width: 1100px)": {
-              display: "inline-flex", // Fix the typo ('in-line' to 'inline-flex')
-              margin: "16px 10px",
-              width: "100%", // Set the width to 50%
-              alignItems: "flex-start", // Reset alignItems
-              // background: "green",
+            "@media (max-width: 1000px)": {
+              width: "100%",
             },
           }}
         >
-          <Heading size={"14px"} weight={"600"} value="Candidates" />
+          <Heading mb="16px" size={"14px"} weight={"600"} value="Candidates" />
           <Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <SquareIcon
@@ -113,21 +102,17 @@ function AssessmentOverview() {
             margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            // gap: "16px",
-            "@media (max-width: 1280px)": {
-              // backgroundColor: "green",
-              margin: "16px 10px",
-            },
-            "@media (max-width: 1100px)": {
-              display: "inline-flex", // Fix the typo ('in-line' to 'inline-flex')
-              margin: "16px 10px",
-              width: "50vw", // Set the width to 50%
-              alignItems: "flex-start", // Reset alignItems
-              background: "green",
+            "@media (max-width: 1000px)": {
+              width: "100%",
             },
           }}
         >
-          <Heading size={"14px"} weight={"600"} value="Candidates Source" />
+          <Heading
+            mb="16px"
+            size={"14px"}
+            weight={"600"}
+            value="Candidates Source"
+          />
           <Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <SquareIcon
@@ -149,7 +134,7 @@ function AssessmentOverview() {
               <Divider orientation="vertical" flexItem />
               <Information
                 text="Unique Link"
-                count={data.candidatesSource.uniqueLink.count} 
+                count={data.candidatesSource.uniqueLink.count}
                 added={data.candidatesSource.uniqueLink.added}
               />
             </Box>
@@ -166,21 +151,18 @@ function AssessmentOverview() {
             margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            // gap: "16px",
-            "@media (max-width: 1280px)": {
-              margin: "16px 10px",
-            },
-
-            "@media (max-width: 1100px)": {
-              display: "inline-flex", // Fix the typo ('in-line' to 'inline-flex')
-              margin: "16px 10px",
-              width: "50vw", // Set the width to 50%
-              alignItems: "flex-start", // Reset alignItems
-              background: "green",
+            "@media (max-width: 1000px)": {
+              width: "40%",
+              mr: 0,
             },
           }}
         >
-          <Heading size={"14px"} weight={"600"} value="Total Purpose" />
+          <Heading
+            mb="16px"
+            size={"14px"}
+            weight={"600"}
+            value="Total Purpose"
+          />
           <Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <SquareIcon
