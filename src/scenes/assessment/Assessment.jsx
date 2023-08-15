@@ -16,8 +16,8 @@ function Assessment() {
     dispatch(modalReducer({ isOpen: true }));
   };
   return (
-    <>
-      <Box p={1} mt={1}>
+    <Box sx={{ background: " #FFF" }}>
+      <Box p={2} >
         <Box mb={1}>
           <Heading size={"18px"} weight={"500"} value="Assessments Overview" />
         </Box>
@@ -127,7 +127,7 @@ function Assessment() {
           )}
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }
 

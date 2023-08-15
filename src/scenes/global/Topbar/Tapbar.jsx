@@ -32,12 +32,14 @@ function Topbar() {
         display="flex"
         justifyContent="space-between"
         className="topbar-container"
-        mb={1}
-        mt={1}
+        pl={1}
+        mb={0.3}
         sx={{
+          background: "#FFF",
           "@media (max-width: 900px)": {
             ml: 1,
             mr: 1,
+            pl: 0,
           },
         }}
       >
@@ -106,8 +108,16 @@ function Topbar() {
           </Box>
         </Box>
         <Box
+          pr={1}
           className="right"
-          sx={{ display: "flex", alignItems: "center", color: "#1C4980" }}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            color: "#1C4980",
+            "@media (max-width: 900px)": {
+              pr: 0,
+            },
+          }}
         >
           <IconButton>
             <PhoneAndroidIcon />

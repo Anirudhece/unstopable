@@ -31,16 +31,19 @@ function App() {
       <Box
         style={{
           marginLeft: isCollapsible ? 0 : "140px",
+          background: "var(--system-background, #F6F8FA)",
         }}
         // className={isCollapsible ? "collapsed-sidebar-margin" : ""}
       >
-        <Topbar isCollapsible={isCollapsible} />
-        <Routes>
-          <Route path="/Assessment" element={<Assessment />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/MyLibrary" element={<MyLibrary />} />
-          <Route path="/RoundStatus" element={<RoundStatus />} />
-        </Routes>
+        <Box ml='10px' mr='10px'>
+          <Topbar isCollapsible={isCollapsible} />
+          <Routes>
+            <Route path="/Assessment" element={<Assessment />} />
+            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/MyLibrary" element={<MyLibrary />} />
+            <Route path="/RoundStatus" element={<RoundStatus />} />
+          </Routes>
+        </Box>
       </Box>
       <style>
         {`
