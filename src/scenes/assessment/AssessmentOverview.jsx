@@ -19,9 +19,8 @@ function AssessmentOverview() {
           borderRadius: "15px",
           flexWrap: "wrap",
           "@media (max-width: 700px)": {
-            justifyContent: "space-between", // Align sections horizontally
+            justifyContent: "space-between",
             alignItems: "flex-start",
-
           },
         }}
       >
@@ -36,11 +35,11 @@ function AssessmentOverview() {
             alignItems: "flex-start",
             maxWidth: "25%",
             "@media (max-width: 700px)": {
-              maxWidth:'none',
-              display:'block',
+              maxWidth: "none",
+              display: "block",
               width: "40%",
-              ml: 'auto',
-              mr:'auot'
+              ml: "auto",
+              mr: "auot",
             },
           }}
         >
@@ -62,7 +61,9 @@ function AssessmentOverview() {
             </Box>
           </Box>
         </Box>
+        {/* **********total assessment end************** */}
 
+        {/* *******total purpose (render only when screen for mobile)******  */}
         <Box
           className="Total-purpose"
           sx={{
@@ -70,12 +71,12 @@ function AssessmentOverview() {
             margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            display:'none',
+            display: "none",
             "@media (max-width: 700px)": {
-              display:'block',
+              display: "block",
               width: "40%",
-              ml: 'auto',
-              mr:'auto'
+              ml: "auto",
+              mr: "auto",
             },
           }}
         >
@@ -93,14 +94,13 @@ function AssessmentOverview() {
                 background={"#E5F1FC"}
               />
               <Information
-                text="Total Candidates"
                 count={data.totalPurpose.count}
               />
             </Box>
           </Box>
         </Box>
+        {/*****total purpose (render only when screen for mobile) ends ***  */}
 
-        {/* **********total assessment end************** */}
         <Divider orientation="vertical" flexItem />
         {/* *******************for candidates************** */}
         <Box
@@ -112,8 +112,6 @@ function AssessmentOverview() {
             alignItems: "flex-start",
             "@media (max-width: 700px)": {
               width: "100%",
-              // borderTop:'1px var(--system-stroke-2, #DADCE0) ',
-              // borderBottom:'1px var(--system-stroke-2, #DADCE0) '
             },
           }}
         >
@@ -199,7 +197,7 @@ function AssessmentOverview() {
             flexDirection: "column",
             alignItems: "flex-start",
             "@media (max-width: 700px)": {
-              display:'none'
+              display: "none",
             },
           }}
         >
@@ -217,7 +215,6 @@ function AssessmentOverview() {
                 background={"#E5F1FC"}
               />
               <Information
-                text="Total Candidates"
                 count={data.totalPurpose.count}
               />
             </Box>
