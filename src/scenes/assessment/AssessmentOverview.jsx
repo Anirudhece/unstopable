@@ -17,7 +17,12 @@ function AssessmentOverview() {
           display: "flex",
           border: "1px solid #DADCE0 ",
           borderRadius: "15px",
-          flexWrap: "wrap", // Allow flex items to wrap
+          flexWrap: "wrap",
+          "@media (max-width: 700px)": {
+            justifyContent: "space-between", // Align sections horizontally
+            alignItems: "flex-start",
+
+          },
         }}
       >
         {/* **********total assessment************** */}
@@ -30,9 +35,12 @@ function AssessmentOverview() {
             flexDirection: "column",
             alignItems: "flex-start",
             maxWidth: "25%",
-            "@media (max-width: 1000px)": {
-              minWidth: "40%",
-              mr: 0,
+            "@media (max-width: 700px)": {
+              maxWidth:'none',
+              display:'block',
+              width: "40%",
+              ml: 'auto',
+              mr:'auot'
             },
           }}
         >
@@ -55,6 +63,43 @@ function AssessmentOverview() {
           </Box>
         </Box>
 
+        <Box
+          className="Total-purpose"
+          sx={{
+            display: "flex",
+            margin: "16px 20px",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            display:'none',
+            "@media (max-width: 700px)": {
+              display:'block',
+              width: "40%",
+              ml: 'auto',
+              mr:'auto'
+            },
+          }}
+        >
+          <Heading
+            mb="16px"
+            size={"14px"}
+            weight={"600"}
+            value="Total Purpose"
+          />
+          <Box>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <SquareIcon
+                color={"#0073E6"}
+                icon={<LinkOutlinedIcon />}
+                background={"#E5F1FC"}
+              />
+              <Information
+                text="Total Candidates"
+                count={data.totalPurpose.count}
+              />
+            </Box>
+          </Box>
+        </Box>
+
         {/* **********total assessment end************** */}
         <Divider orientation="vertical" flexItem />
         {/* *******************for candidates************** */}
@@ -65,8 +110,10 @@ function AssessmentOverview() {
             margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            "@media (max-width: 1000px)": {
+            "@media (max-width: 700px)": {
               width: "100%",
+              // borderTop:'1px var(--system-stroke-2, #DADCE0) ',
+              // borderBottom:'1px var(--system-stroke-2, #DADCE0) '
             },
           }}
         >
@@ -102,7 +149,7 @@ function AssessmentOverview() {
             margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            "@media (max-width: 1000px)": {
+            "@media (max-width: 700px)": {
               width: "100%",
             },
           }}
@@ -151,9 +198,8 @@ function AssessmentOverview() {
             margin: "16px 20px",
             flexDirection: "column",
             alignItems: "flex-start",
-            "@media (max-width: 1000px)": {
-              width: "40%",
-              mr: 0,
+            "@media (max-width: 700px)": {
+              display:'none'
             },
           }}
         >
