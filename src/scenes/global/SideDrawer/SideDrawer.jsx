@@ -8,7 +8,7 @@ import {
   MdOutlineAdminPanelSettings,
 } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-const drawerWidth = 130;
+const drawerWidth = 140;
 import { toggleDrawer } from "../../../store/slices/drawerSlice";
 
 function SideDrawer(props) {
@@ -48,7 +48,7 @@ function SideDrawer(props) {
 
         <InsideList
           to="/RoundStatus"
-          value="RoundStatus"
+          value="Round Status"
           icon={MdOutlineAdminPanelSettings}
         />
       </List>

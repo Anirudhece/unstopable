@@ -30,7 +30,7 @@ function App() {
       <SideDrawer />
       <Box
         style={{
-          marginLeft: isCollapsible ? 0 : "130px",
+          marginLeft: isCollapsible ? 0 : "140px",
         }}
         // className={isCollapsible ? "collapsed-sidebar-margin" : ""}
       >

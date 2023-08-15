@@ -31,6 +31,8 @@ function InsideList(props) {
           border: `1px solid ${borderColor}`,
           borderRadius: "8px",
           background: background,
+          mb:'5px',
+          textAlign:'center'
         }}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
@@ -43,7 +45,8 @@ function InsideList(props) {
             sx={{
               display: "flex",
               flexDirection: "column",
-              m: "13px",
+              mt: "13px",
+              mb:'13px'
             }}
           >
             <ListItemIcon
