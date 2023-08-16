@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import { useDispatch } from "react-redux";
 import { editFieldReducer } from "../../store/slices/addAssignmentReducer";
 
-export default function FullWidthTextField(props) {
+export default function InputText(props) {
   const dispatch = useDispatch();
 
   const editField = (event) => {

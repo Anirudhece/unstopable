@@ -21,6 +21,7 @@ import {
   modalReducer,
   saveAssessmentInvoice,
 } from "../../store/slices/addAssignmentReducer";
+import TimeInput from "./TimeInput";
 
 export default function Modal() {
   const dispatch = useDispatch();
@@ -131,7 +132,7 @@ export default function Modal() {
             </Box>
             <Box mb={2}>
               <Heading value="Duration of assessment" />
-              <InputText
+              <TimeInput
                 innerValue={assignmentGlobalState.duration}
                 id="duration"
                 value="HH:MM:SS"
