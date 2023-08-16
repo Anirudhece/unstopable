@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Divider } from "@mui/material";
 import ViewAgendaOutlinedIcon from "@mui/icons-material/ViewAgendaOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
@@ -9,6 +9,18 @@ import Heading from "../../components/assessmentOverview/Heading";
 import Information from "../../components/assessmentOverview/Information";
 import { data } from "../../store/slices/assessmentOverView";
 function AssessmentOverview() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
       <Box
@@ -40,6 +52,7 @@ function AssessmentOverview() {
               width: "40%",
               ml: "auto",
               mr: "auot",
+              // borderBottom:'1px solid #DADCE0 '
             },
           }}
         >
@@ -62,6 +75,19 @@ function AssessmentOverview() {
           </Box>
         </Box>
         {/* **********total assessment end************** */}
+        <Box
+          sx={{
+            display: "none",
+            "@media (max-width: 700px)": {
+              display: "block",
+              width: "3px",
+              borderLeft: "1px solid grey",
+              borderRight: "1px solid grey",
+              background: "#DADCE0",
+              height: "110px",
+            },
+          }}
+        ></Box>
 
         {/* *******total purpose (render only when screen for mobile)******  */}
         <Box
@@ -93,15 +119,28 @@ function AssessmentOverview() {
                 icon={<LinkOutlinedIcon />}
                 background={"#E5F1FC"}
               />
-              <Information
-                count={data.totalPurpose.count}
-              />
+              <Information count={data.totalPurpose.count} />
             </Box>
           </Box>
         </Box>
         {/*****total purpose (render only when screen for mobile) ends ***  */}
 
-        <Divider orientation="vertical" flexItem />
+        {windowWidth > 700 && <Divider orientation="vertical" flexItem />}
+
+        <Box
+          sx={{
+            display: "none",
+            "@media (max-width: 700px)": {
+              display: "block",
+              width: "100%",
+              borderTop: "1px solid grey",
+              borderBottom: "1px solid grey",
+              background: "#DADCE0",
+              height: "3px",
+            },
+          }}
+        ></Box>
+
         {/* *******************for candidates************** */}
         <Box
           className="candidates"
@@ -138,7 +177,20 @@ function AssessmentOverview() {
           </Box>
         </Box>
         {/* ************candidate end**************** */}
-        <Divider orientation="vertical" flexItem />
+        {windowWidth > 700 && <Divider orientation="vertical" flexItem />}
+        <Box
+          sx={{
+            display: "none",
+            "@media (max-width: 700px)": {
+              display: "block",
+              width: "100%",
+              borderTop: "1px solid grey",
+              borderBottom: "1px solid grey",
+              background: "#DADCE0",
+              height: "3px",
+            },
+          }}
+        ></Box>
         {/* ***********candidate source start************** */}
         <Box
           className="candidatesSource"
@@ -214,9 +266,7 @@ function AssessmentOverview() {
                 icon={<LinkOutlinedIcon />}
                 background={"#E5F1FC"}
               />
-              <Information
-                count={data.totalPurpose.count}
-              />
+              <Information count={data.totalPurpose.count} />
             </Box>
           </Box>
         </Box>

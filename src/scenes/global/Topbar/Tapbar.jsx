@@ -98,6 +98,7 @@ function Topbar() {
                 fontWeight: "600",
                 lineHeight: "normal",
                 borderBottom: "2px solid",
+                textAlign:'center'
               }}
             >
               <>

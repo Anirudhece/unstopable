@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Divider, AvatarGroup, Avatar } from "@mui/material";
 import SquareIcon from "../SquareIcon";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
-import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import Heading from "./Heading";
 import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
 import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
