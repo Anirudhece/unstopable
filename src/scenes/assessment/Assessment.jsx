@@ -17,7 +17,7 @@ function Assessment() {
   };
   return (
     <Box sx={{ background: " #FFF" }}>
-      <Box p={2} >
+      <Box p={2}>
         <Box mb={1}>
           <Heading size={"18px"} weight={"500"} value="Assessments Overview" />
         </Box>

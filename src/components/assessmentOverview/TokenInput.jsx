@@ -21,7 +21,9 @@ export default function TokenInput(props) {
   };
 
   return (
-    <Box  mt={2}  sx={{maxWidth: "100%",}}>
+    <Box  mt={2} 
+    
+     >
       <TextField
         label="Add a skill"
         value={inputValue}
