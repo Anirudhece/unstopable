@@ -19,7 +19,7 @@ export default function TimeInput(props) {
     <Box mt={2} sx={{ width: "100%" }}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <TimePicker
-          slotProps={{ textField: { fullWidth: true } }}
+          slotProps={{ textField: { fullWidth: true, error: false } }}
           onChange={(event) => editField(event)}
           value={props.innerValue}
           label={props.value}

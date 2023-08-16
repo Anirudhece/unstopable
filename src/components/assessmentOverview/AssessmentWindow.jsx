@@ -7,6 +7,7 @@ import Heading from "./Heading";
 import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
 import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
 import Information from "./Information";
+import DotsMenu from "./DotsMenu";
 
 function AssessmentWindow(props) {
   return (
@@ -33,7 +34,7 @@ function AssessmentWindow(props) {
             background={"#EBE8FD"}
             icon={<BusinessCenterOutlinedIcon />}
           />
-          <MoreVertOutlinedIcon />
+          <DotsMenu />
         </Box>
         {/* **********top row end************ */}
 
