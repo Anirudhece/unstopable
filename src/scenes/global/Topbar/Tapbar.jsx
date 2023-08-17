@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import SegmentOutlinedIcon from "@mui/icons-material/SegmentOutlined";
 import { useDispatch } from "react-redux";
 import { toggleDrawer } from "../../../store/slices/drawerSlice";
+import SubNav from "../../../components/SubNav";
 
 function Topbar() {
   const dispatch = useDispatch();
@@ -86,26 +87,22 @@ function Topbar() {
           </Box>
           <Divider sx={{ ml: 3, mr: 3 }} orientation="vertical" flexItem />
 
-          <Box>
-            <Typography
-              pt={2}
-              pb={2}
-              sx={{
-                color: "var(--secondary-1, #0073E6)",
-                fontFamily: "Inter",
-                fontSize: "14px",
-                fontStyle: "normal",
-                fontWeight: "600",
-                lineHeight: "normal",
-                borderBottom: "2px solid",
-                textAlign:'center'
-              }}
-            >
-              <>
-                My {}
-                {location.pathname.replace(/\//g, "")}
-              </>
-            </Typography>
+          <Box
+            sx={{
+              "@media (max-width: 600px)": {
+                display: "none",
+              },
+            }}
+          >
+            <SubNav
+              border={true}
+              value={
+                <>
+                  My {}
+                  {location.pathname.replace(/\//g, "")}
+                </>
+              }
+            />
           </Box>
         </Box>
         <Box
@@ -123,6 +120,31 @@ function Topbar() {
           <IconButton>
             <PhoneAndroidIcon />
           </IconButton>
+        </Box>
+      </Box>
+
+      <Box
+        sx={{
+          display: "none",
+          "@media (max-width: 600px)": {
+            display: "flex",
+            justifyContent: "space-between",
+          },
+        }}
+      >
+        <Box width={"50%"}>
+          <SubNav
+            border={true}
+            value={
+              <>
+                My {}
+                {location.pathname.replace(/\//g, "")}
+              </>
+            }
+          />
+        </Box>
+        <Box width={"50%"}>
+          <SubNav color="#3E6493" value="Unstop Assessment" />
         </Box>
       </Box>
     </>

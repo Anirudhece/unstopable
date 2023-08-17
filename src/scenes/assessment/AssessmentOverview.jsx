@@ -52,7 +52,6 @@ function AssessmentOverview() {
               width: "40%",
               ml: "auto",
               mr: "auot",
-              // borderBottom:'1px solid #DADCE0 '
             },
           }}
         >
