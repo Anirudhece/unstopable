@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Drawer, List, Divider, Chip } from "@mui/material";
+import {
+  Box,
+  Drawer,
+  List,
+  Divider,
+  Chip,
+  Typography,
+  IconButton,
+} from "@mui/material";
 import { RiDashboardLine } from "react-icons/ri";
 import InsideList from "../../../components/InsideList";
 import {
@@ -10,6 +18,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 const drawerWidth = 140;
 import { toggleDrawer } from "../../../store/slices/drawerSlice";
+import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 function SideDrawer(props) {
   const dispatch = useDispatch();
@@ -42,12 +51,21 @@ function SideDrawer(props) {
           value="Assessment"
           icon={MdOutlineNoteAlt}
         />
-        
+
         <InsideList to="/MyLibrary" value="MyLibrary" icon={MdOutlineQuiz} />
 
         <Divider variant="middle" />
 
-        <Box m={1} sx={{ display: "flex", justifyContent: "center" }}>
+        <Box
+          m={1}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            "@media (max-width: 600px)": {
+              display: "none",
+            },
+          }}
+        >
           <Chip variant="outlined" color="error" label="Admin" />
         </Box>
 
@@ -55,6 +73,7 @@ function SideDrawer(props) {
           to="/RoundStatus"
           value="Round Status"
           icon={MdOutlineAdminPanelSettings}
+          chip={true}
         />
       </List>
     </Box>
@@ -71,7 +90,7 @@ function SideDrawer(props) {
         open={isOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
-          keepMounted: true, // Better open performance on mobile.
+          keepMounted: true,
         }}
         sx={{
           display: { xs: "block", sm: "none" },
@@ -81,6 +100,33 @@ function SideDrawer(props) {
           },
         }}
       >
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            mt: "40px",
+          }}
+        >
+          <Box
+            sx={{
+              width: "85%",
+              display: "flex",
+              justifyContent: "space-between",
+              color: "#1C4980",
+              fontWeight: '500',
+            }}
+          >
+            <Typography display={"flex"} alignItems={"center"}>
+              Menu
+            </Typography>
+            <IconButton>
+              <CloseOutlinedIcon
+                fontSize="small"
+                onClick={handleDrawerToggle}
+              />
+            </IconButton>
+          </Box>
+        </Box>
         {drawer}
       </Drawer>
       <Drawer

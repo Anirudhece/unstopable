@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, ListItem, ListItemText, ListItemIcon } from "@mui/material";
+import { Box, Chip, ListItem, ListItemText, ListItemIcon } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
 function InsideList(props) {
@@ -38,6 +38,7 @@ function InsideList(props) {
           "@media (max-width: 600px)": {
             display: "block",
             pl: 0,
+            width: "85%",
           },
         }}
         onMouseOver={handleMouseOver}
@@ -73,6 +74,20 @@ function InsideList(props) {
             <Box color={fontColor}>
               <ListItemText primary={props.value} />
             </Box>
+            {props.chip && (
+              <Chip
+                variant="outlined"
+                color="error"
+                size="small"
+                label="Admin"
+                sx={{
+                  ml: "auto",
+                  "@media (min-width: 600px)": {
+                    display: "none",
+                  },
+                }}
+              />
+            )}
           </Box>
         </Link>
       </ListItem>
