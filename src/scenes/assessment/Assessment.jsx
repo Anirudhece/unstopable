@@ -105,7 +105,9 @@ function Assessment() {
             </Box>
           </Box>
           <Modal />
+
           {/* ***************new assement ends************ */}
+          
           {assignments.map(
             (ele, ind) =>
               ele.id && (

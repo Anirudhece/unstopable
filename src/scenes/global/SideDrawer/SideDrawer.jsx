@@ -27,22 +27,27 @@ function SideDrawer(props) {
         sx={{
           color: "var(--secondary-1, #0073E6)",
           fontFamily: "Inter",
-          fontSize: "15px",
+          fontSize: "12px",
           fontStyle: "normal",
           fontWeight: "500",
+          "@media (max-width: 600px)": {
+            fontSize: "15px",
+          },
         }}
       >
         <InsideList to="/Dashboard" value="Dashboard" icon={RiDashboardLine} />
+
         <InsideList
           to="/Assessment"
           value="Assessment"
           icon={MdOutlineNoteAlt}
         />
+        
         <InsideList to="/MyLibrary" value="MyLibrary" icon={MdOutlineQuiz} />
 
         <Divider variant="middle" />
 
-        <Box m={1.5} sx={{ display: "flex", justifyContent: "center" }}>
+        <Box m={1} sx={{ display: "flex", justifyContent: "center" }}>
           <Chip variant="outlined" color="error" label="Admin" />
         </Box>
 
@@ -72,7 +77,7 @@ function SideDrawer(props) {
           display: { xs: "block", sm: "none" },
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
-            width: drawerWidth+25,
+            width: "80%",
           },
         }}
       >

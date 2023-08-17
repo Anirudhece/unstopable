@@ -21,6 +21,8 @@ function InsideList(props) {
 
   const background = isCurrentRoute ? "#E5F1FC" : "transparent";
 
+  const fontColor = isCurrentRoute ? "#0073E6" : "#1C4980";
+
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }}>
       <ListItem
@@ -31,34 +33,46 @@ function InsideList(props) {
           border: `1px solid ${borderColor}`,
           borderRadius: "8px",
           background: background,
-          mb:'5px',
-          textAlign:'center'
+          mb: "5px",
+          textAlign: "center",
+          "@media (max-width: 600px)": {
+            display: "block",
+            pl: 0,
+          },
         }}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       >
         <Link
-          style={{ textDecoration: "none", color: "#0073E6" }}
+          style={{ textDecoration: "none", color: fontColor }}
           to={props.to}
         >
           <Box
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              mt: "13px",
-              mb:'13px'
+              mt: "10px",
+              mb: "10px",
+              "@media (max-width: 600px)": {
+                display: "flex",
+                alignItems: "center",
+              },
             }}
           >
             <ListItemIcon
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                color: "#1C4980",
+                color: fontColor,
+                fontSize: "20px",
+                "@media (max-width: 600px)": {
+                  display: "flex",
+                },
               }}
             >
               <props.icon />
             </ListItemIcon>
-            <ListItemText primary={props.value} />
+            <Box color={fontColor}>
+              <ListItemText primary={props.value} />
+            </Box>
           </Box>
         </Link>
       </ListItem>
