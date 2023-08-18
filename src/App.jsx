@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import SideDrawer from "./scenes/global/SideDrawer/SideDrawer";
 import { Box, CssBaseline } from "@mui/material";
 import Topbar from "./scenes/global/Topbar/Tapbar.jsx";
@@ -37,7 +37,8 @@ function App() {
         <Box ml="10px" mr="10px">
           <Topbar isCollapsible={isCollapsible} />
           <Routes>
-            <Route exact path="/Assessment" element={<Assessment />} />
+            <Route path="/" element={<Navigate to="/Assessment" />} />
+            <Route path="/Assessment" element={<Assessment />} />
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/MyLibrary" element={<MyLibrary />} />
             <Route path="/RoundStatus" element={<RoundStatus />} />
