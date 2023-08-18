@@ -7,7 +7,7 @@ import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 import SquareIcon from "../../components/SquareIcon";
 import Heading from "../../components/assessmentOverview/Heading";
 import Information from "../../components/assessmentOverview/Information";
-import { data } from "../../store/slices/assessmentOverView";
+import { data } from "../../store/slices/StatesData";
 function AssessmentOverview() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 

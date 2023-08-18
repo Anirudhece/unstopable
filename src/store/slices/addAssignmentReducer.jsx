@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { intitalState } from "./constant";
 
 const removeElementAtIndex = (array, index) => {
   if (index >= 0 && index < array.length) {
