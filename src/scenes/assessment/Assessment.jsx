@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { modalReducer } from "../../store/slices/addAssignmentReducer";
 import Modal from "../../components/assessmentOverview/Modal";
 import AssessmentWindow from "../../components/assessmentOverview/AssessmentWindow";
-import AssessmentOverview from "./AssessmentOverview";
+import AssessmentOverview from "./Stats";
 import BarChartTwoToneIcon from "@mui/icons-material/BarChartTwoTone";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import OptionIcon from "../../components/assessmentOverview/OptionIcon";

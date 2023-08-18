@@ -34,10 +34,10 @@ function App() {
           background: "var(--system-background, #F6F8FA)",
         }}
       >
-        <Box ml='10px' mr='10px'>
+        <Box ml="10px" mr="10px">
           <Topbar isCollapsible={isCollapsible} />
           <Routes>
-            <Route path="/Assessment" element={<Assessment />} />
+            <Route exact path="/Assessment" element={<Assessment />} />
             <Route path="/Dashboard" element={<Dashboard />} />
             <Route path="/MyLibrary" element={<MyLibrary />} />
             <Route path="/RoundStatus" element={<RoundStatus />} />
