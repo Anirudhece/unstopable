@@ -21,6 +21,8 @@ function AssessmentOverview() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // ##### here we are populating data using hardcoded information using "data" ##### 
   return (
     <>
       <Box

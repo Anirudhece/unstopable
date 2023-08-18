@@ -175,6 +175,7 @@ function Assessment() {
                     },
                   }}
                 >
+                  {/* ### we can populate the data by passing props (just like ele.assignmentName)### */}
                   <AssessmentWindow
                     id={ele.id}
                     assignmentName={ele.assignmentName}
