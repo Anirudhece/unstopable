@@ -77,6 +77,11 @@ export default function Modal() {
                 fontWeight: "600",
                 lineHeight: "normal",
                 display: "flex",
+
+                "@media (max-width: 700px)": {
+                  fontSize: "14px",
+                  alignItems: "center",
+                },
               }}
             >
               Create new assessment
@@ -135,7 +140,7 @@ export default function Modal() {
               <TimeInput
                 innerValue={assignmentGlobalState.duration}
                 id="duration"
-                value="HH:MM:SS"
+                // value="HH:MM:SS"
               />
             </Box>
           </DialogContentText>
