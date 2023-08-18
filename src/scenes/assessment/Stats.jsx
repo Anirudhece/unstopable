@@ -150,6 +150,8 @@ function AssessmentOverview() {
             alignItems: "flex-start",
             "@media (max-width: 700px)": {
               width: "100%",
+              ml: "12px",
+              mr: "12px",
             },
           }}
         >
@@ -200,6 +202,8 @@ function AssessmentOverview() {
             alignItems: "flex-start",
             "@media (max-width: 700px)": {
               width: "100%",
+              ml: "12px",
+              mr: "12px",
             },
           }}
         >

@@ -8,7 +8,6 @@ function Information({ count, added, text, ml }) {
           marginLeft: ml ? ml : 1.3,
           marginRight: 1.3,
         }}
-        // ml={ml?ml:1.3} mr={1.3}
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>
           {count && (
