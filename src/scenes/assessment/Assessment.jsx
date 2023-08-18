@@ -7,7 +7,9 @@ import { modalReducer } from "../../store/slices/addAssignmentReducer";
 import Modal from "../../components/assessmentOverview/Modal";
 import AssessmentWindow from "../../components/assessmentOverview/AssessmentWindow";
 import AssessmentOverview from "./AssessmentOverview";
-import { MdOutlineBarChart } from "react-icons/md";
+// import { MdOutlineBarChart } from "react-icons/md";
+import BarChartTwoToneIcon from "@mui/icons-material/BarChartTwoTone";
+import OptionIcon from "../../components/assessmentOverview/OptionIcon";
 
 function Assessment() {
   const dispatch = useDispatch();
@@ -31,8 +33,10 @@ function Assessment() {
           mt={2}
           mb={1}
           sx={{
+            display: "flex",
+            alignItems: "center",
             "@media (max-width: 600px)": {
-              display: "flex",
+              justifyContent: "space-between",
             },
           }}
         >
@@ -40,18 +44,15 @@ function Assessment() {
           {/* **********filter icons start******* */}
           <Box
             sx={{
-              dispaly: "flex",
+              display: "flex",
               "@media (min-width: 600px)": {
                 display: "none",
               },
             }}
           >
-            <Box className="cicular icon" sx={{
-              size:'16px',
-              color:'#0073E6'
-            }} >
-              <MdOutlineBarChart />
-            </Box>
+            <OptionIcon value={<BarChartTwoToneIcon />} />
+            <OptionIcon value={<BarChartTwoToneIcon />} />
+            <OptionIcon value={<BarChartTwoToneIcon />} />
           </Box>
           {/* *********filter icons end************ */}
         </Box>
