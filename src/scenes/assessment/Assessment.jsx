@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Box } from "@mui/material";
 import Heading from "../../components/assessmentOverview/Heading";
 import AddIcon from "@mui/icons-material/Add";
@@ -7,9 +7,10 @@ import { modalReducer } from "../../store/slices/addAssignmentReducer";
 import Modal from "../../components/assessmentOverview/Modal";
 import AssessmentWindow from "../../components/assessmentOverview/AssessmentWindow";
 import AssessmentOverview from "./AssessmentOverview";
-// import { MdOutlineBarChart } from "react-icons/md";
 import BarChartTwoToneIcon from "@mui/icons-material/BarChartTwoTone";
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import OptionIcon from "../../components/assessmentOverview/OptionIcon";
+import FilterAltRoundedIcon from '@mui/icons-material/FilterAltRounded';
 
 function Assessment() {
   const dispatch = useDispatch();
@@ -18,6 +19,11 @@ function Assessment() {
   const addAssignment = (e) => {
     dispatch(modalReducer({ isOpen: true }));
   };
+  const hideAssessmentOveriew=()=>{
+    setrenderAssessmentOverview(!renderAssessmentOverview);
+    console.log('renderAssessmentOverview:'+renderAssessmentOverview);
+  }
+  const [renderAssessmentOverview,setrenderAssessmentOverview]=useState(true);
   return (
     <Box sx={{ background: " #FFF" }}>
       <Box p={2}>
@@ -25,7 +31,7 @@ function Assessment() {
           <Heading size={"18px"} weight={"500"} value="Assessments Overview" />
         </Box>
 
-        <AssessmentOverview />
+        {renderAssessmentOverview && <AssessmentOverview />}
       </Box>
       {/* ************my assessments begin*********** */}
       <Box p={1}>
@@ -42,7 +48,7 @@ function Assessment() {
         >
           <Heading size={"18px"} weight={"500"} value="My Assessments" />
           {/* **********filter icons start******* */}
-          <Box
+          <Box onClick={hideAssessmentOveriew}
             sx={{
               display: "flex",
               "@media (min-width: 600px)": {
@@ -50,9 +56,9 @@ function Assessment() {
               },
             }}
           >
-            <OptionIcon value={<BarChartTwoToneIcon />} />
-            <OptionIcon value={<BarChartTwoToneIcon />} />
-            <OptionIcon value={<BarChartTwoToneIcon />} />
+            <OptionIcon value={<SearchRoundedIcon />} />
+            <OptionIcon value={<FilterAltRoundedIcon />} />
+            <OptionIcon  value={<BarChartTwoToneIcon />} />
           </Box>
           {/* *********filter icons end************ */}
         </Box>
@@ -159,5 +165,4 @@ function Assessment() {
     </Box>
   );
 }
-
 export default Assessment;
