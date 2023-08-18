@@ -10,9 +10,12 @@ function OptionIcon(props) {
         alignItems: "center",
         display: "flex",
         p: "4px",
+        border: props.highlight ? "1px solid #0073E6" : null,
       }}
     >
-      <IconButton sx={{ color: "#1C4980" }}>{props.value}</IconButton>
+      <IconButton sx={{ color: props.highlight ? "#0073E6" : "#1C4980" }}>
+        {props.value}
+      </IconButton>
     </Box>
   );
 }

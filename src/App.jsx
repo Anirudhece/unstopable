@@ -33,7 +33,6 @@ function App() {
           marginLeft: isCollapsible ? 0 : "140px",
           background: "var(--system-background, #F6F8FA)",
         }}
-        // className={isCollapsible ? "collapsed-sidebar-margin" : ""}
       >
         <Box ml='10px' mr='10px'>
           <Topbar isCollapsible={isCollapsible} />

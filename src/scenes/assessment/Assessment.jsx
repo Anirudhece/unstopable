@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 import Heading from "../../components/assessmentOverview/Heading";
 import AddIcon from "@mui/icons-material/Add";
@@ -8,22 +8,35 @@ import Modal from "../../components/assessmentOverview/Modal";
 import AssessmentWindow from "../../components/assessmentOverview/AssessmentWindow";
 import AssessmentOverview from "./AssessmentOverview";
 import BarChartTwoToneIcon from "@mui/icons-material/BarChartTwoTone";
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import OptionIcon from "../../components/assessmentOverview/OptionIcon";
-import FilterAltRoundedIcon from '@mui/icons-material/FilterAltRounded';
+import FilterAltRoundedIcon from "@mui/icons-material/FilterAltRounded";
 
 function Assessment() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const dispatch = useDispatch();
   const { assignments } = useSelector((state) => state.AddAssignment);
 
   const addAssignment = (e) => {
     dispatch(modalReducer({ isOpen: true }));
   };
-  const hideAssessmentOveriew=()=>{
+  const hideAssessmentOveriew = () => {
     setrenderAssessmentOverview(!renderAssessmentOverview);
-    console.log('renderAssessmentOverview:'+renderAssessmentOverview);
-  }
-  const [renderAssessmentOverview,setrenderAssessmentOverview]=useState(true);
+  };
+  const [renderAssessmentOverview, setrenderAssessmentOverview] =
+    useState(true);
   return (
     <Box sx={{ background: " #FFF" }}>
       <Box p={2}>
@@ -31,7 +44,11 @@ function Assessment() {
           <Heading size={"18px"} weight={"500"} value="Assessments Overview" />
         </Box>
 
-        {renderAssessmentOverview && <AssessmentOverview />}
+        {windowWidth > 600 ? (
+          <AssessmentOverview />
+        ) : (
+          renderAssessmentOverview && <AssessmentOverview />
+        )}
       </Box>
       {/* ************my assessments begin*********** */}
       <Box p={1}>
@@ -48,7 +65,7 @@ function Assessment() {
         >
           <Heading size={"18px"} weight={"500"} value="My Assessments" />
           {/* **********filter icons start******* */}
-          <Box onClick={hideAssessmentOveriew}
+          <Box
             sx={{
               display: "flex",
               "@media (min-width: 600px)": {
@@ -58,7 +75,12 @@ function Assessment() {
           >
             <OptionIcon value={<SearchRoundedIcon />} />
             <OptionIcon value={<FilterAltRoundedIcon />} />
-            <OptionIcon  value={<BarChartTwoToneIcon />} />
+            <Box onClick={hideAssessmentOveriew}>
+              <OptionIcon
+                highlight={renderAssessmentOverview}
+                value={<BarChartTwoToneIcon />}
+              />
+            </Box>
           </Box>
           {/* *********filter icons end************ */}
         </Box>
