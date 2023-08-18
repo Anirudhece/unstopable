@@ -7,6 +7,7 @@ import { modalReducer } from "../../store/slices/addAssignmentReducer";
 import Modal from "../../components/assessmentOverview/Modal";
 import AssessmentWindow from "../../components/assessmentOverview/AssessmentWindow";
 import AssessmentOverview from "./AssessmentOverview";
+import { MdOutlineBarChart } from "react-icons/md";
 
 function Assessment() {
   const dispatch = useDispatch();
@@ -24,10 +25,35 @@ function Assessment() {
 
         <AssessmentOverview />
       </Box>
-      {/* ************assessments begin*********** */}
+      {/* ************my assessments begin*********** */}
       <Box p={1}>
-        <Box mt={2} mb={1}>
-          <Heading size={"18px"} weight={"500"} value="Assessments Overview" />
+        <Box
+          mt={2}
+          mb={1}
+          sx={{
+            "@media (max-width: 600px)": {
+              display: "flex",
+            },
+          }}
+        >
+          <Heading size={"18px"} weight={"500"} value="My Assessments" />
+          {/* **********filter icons start******* */}
+          <Box
+            sx={{
+              dispaly: "flex",
+              "@media (min-width: 600px)": {
+                display: "none",
+              },
+            }}
+          >
+            <Box className="cicular icon" sx={{
+              size:'16px',
+              color:'#0073E6'
+            }} >
+              <MdOutlineBarChart />
+            </Box>
+          </Box>
+          {/* *********filter icons end************ */}
         </Box>
         {/* *********bellow my assessment********** */}
 
@@ -107,7 +133,7 @@ function Assessment() {
           <Modal />
 
           {/* ***************new assement ends************ */}
-          
+
           {assignments.map(
             (ele, ind) =>
               ele.id && (
